@@ -10,7 +10,9 @@
 #ifndef DBPF_H_CATOFEVILGENIUS
 #define DBPF_H_CATOFEVILGENIUS
 
+#include <string>
 #include <vector>
+
 using namespace std;
 
 // forward declaration
