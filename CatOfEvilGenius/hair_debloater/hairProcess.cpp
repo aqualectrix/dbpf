@@ -3,16 +3,15 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include <DBPF.h>
-#include <DBPFcompress.h>
-#include <DBPF_types.h>
-#include <DBPF_3IDR.h>
-#include <DBPF_GZPS.h>
-#include <DBPF_XHTN.h>
-#include <DBPF_TXMT.h>
-#include <DBPF_TXTR.h>
-#include <DBPF_STR.h>
-
+#include "DBPF.h"
+#include "DBPFcompress.h"
+#include "DBPF_types.h"
+#include "DBPF_3IDR.h"
+#include "DBPF_GZPS.h"
+#include "DBPF_XHTN.h"
+#include "DBPF_TXMT.h"
+#include "DBPF_TXTR.h"
+#include "DBPF_STR.h"
 
 void removeNullResources( vector< DBPF_resourceType * > & resources )
 {
@@ -153,11 +152,11 @@ bool hairProcess( const char * filename, const int hairColor, const char * strFa
 
 
       // Is it adult female hair?
-      if( false == bHaveHairA  ||  false == bHaveHairAlphaA 
+      if( false == bHaveHairA  ||  false == bHaveHairAlphaA
        || false == bHaveFrame  ||  false == bHaveLens )
       {
         if( NULL != strstr( resName.c_str(), "afhair" ) )
-        { 
+        {
           if( false == bHaveFrame  &&  NULL != strstr( resName.c_str(), "~frame" ) )
           {
             pResource->getTGIR( tgirFrame );
@@ -186,11 +185,11 @@ bool hairProcess( const char * filename, const int hairColor, const char * strFa
       }
 
       // Is it elder hair? (black only)
-      if( (HAIR_BLACK == hairColor) && 
+      if( (HAIR_BLACK == hairColor) &&
               ( false == bHaveHairE  ||  false == bHaveHairAlphaE ) )
       {
         if( NULL != strstr( resName.c_str(), "efhair" ) )
-        { 
+        {
           bGreyHairTXMT = true;
 
           if( false == bHaveHairAlphaE  &&  NULL != strstr( resName.c_str(), "alpha" ) )
@@ -471,4 +470,3 @@ bool hairProcess( const char * filename, const int hairColor, const char * strFa
 
 	return bWriteSuccess;
 } // hairProcess
-
