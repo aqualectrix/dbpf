@@ -112,7 +112,7 @@ public:
   bool getPairAt( const unsigned int i, string & key, string & val ) const;
 
   bool getPropertyValue( const string propName, string & propValue ) const;
-  bool setPropertyValue( const string propName, string & propValue, bool & bChanged,
+  bool setPropertyValue( const string propName, const string & propValue, bool & bChanged,
                                       int & iChangeInRawBytesCount );
   bool addPair( string propName, string propValue );
 

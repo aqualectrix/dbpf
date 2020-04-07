@@ -250,7 +250,7 @@ bool DBPF_CPFtype::getPropertyValue( const string propName, DBPF_CPFitemType & p
  * purpose: set a property, if the new property value is different from the old one
 </pre>
 **/
-bool DBPF_propertiesType::setPropertyValue( const string propName, string & propValue,
+bool DBPF_propertiesType::setPropertyValue( const string propName, const string & propValue,
                                             bool & bChanged, int & iChangeInRawBytesCount )
 {
   bChanged = false;
