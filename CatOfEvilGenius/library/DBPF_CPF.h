@@ -1,7 +1,7 @@
 /**
  * file:   DBPF_CPF.h
  * author: CatOfEvilGenius
- * 
+ *
  * CPF is a data format used in several DBPF resource types.
  * This file also has the properties class (key/value, string values only).
 **/
@@ -13,11 +13,7 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
-#ifdef __GNUC__
-#include <ext/hash_map>
-#else
-#include <hash_map>
-#endif
+#include <unordered_map>
 
 using namespace std;
 #ifdef __GNUC__
@@ -34,7 +30,7 @@ using namespace stdext;
 #define CPF_STRING 0x0B8BEA18
 
 class DBPF_CPFitemType
-{ 
+{
 public:
   DBPF_CPFitemType() {}
   ~DBPF_CPFitemType() {}
@@ -90,7 +86,7 @@ protected:
   // names of all properties
   vector< string > mPropertyKeys;
   // hashmap of property name and property value pairs, get names from mPropertyKeys
-  hash_map< string, DBPF_CPFitemType > mProperties;
+  unordered_map< string, DBPF_CPFitemType > mProperties;
 };
 
 
@@ -126,7 +122,7 @@ protected:
   // names of all properties
   vector< string > mPropertyKeys;
   // hashmap of property name and property value pairs, get names from mPropertyKeys
-  hash_map< string, string > mProperties;
+  unordered_map< string, string > mProperties;
 
 };
 

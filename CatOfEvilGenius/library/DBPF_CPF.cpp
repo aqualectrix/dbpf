@@ -8,11 +8,7 @@
 #include <cstring>
 #include <string>
 #include <vector>
-#ifdef __GNUC__
-#include <ext/hash_map>
-#else
-#include <hash_map>
-#endif
+#include <unordered_map>
 
 #include "DBPF_CPF.h" // DBPF_propertiesType
 #include "DBPF_byteStreamFunctions.h"
@@ -130,10 +126,10 @@ void DBPF_CPFtype::dump( FILE * f ) const
 
 
 // add key/value pair, key must be unique
-bool DBPF_propertiesType::addPair( string propName, string propValue )
+bool DBPF_propertiesType::addPair(string propName, string propValue )
 {
   // if key is not in hash, add key/value pair
-  hash_map< string, string >::const_iterator iter;
+  unordered_map< string, string >::const_iterator iter;
   iter = this->mProperties.find( propName );
   if( iter == this->mProperties.end() )
   {
@@ -148,10 +144,10 @@ bool DBPF_propertiesType::addPair( string propName, string propValue )
 
 
 // add key/value pair, key must be unique
-bool DBPF_CPFtype::addPair( string propName, DBPF_CPFitemType & propValue )
+bool DBPF_CPFtype::addPair( const string propName, DBPF_CPFitemType & propValue )
 {
   // if key is not in hash, add key/value pair
-  hash_map< string, DBPF_CPFitemType >::const_iterator iter;
+  unordered_map< string, DBPF_CPFitemType >::const_iterator iter;
   iter = this->mProperties.find( propName );
   if( iter == this->mProperties.end() )
   {
@@ -213,7 +209,7 @@ bool DBPF_CPFtype::getPairAt( const unsigned int i, string & key, DBPF_CPFitemTy
 **/
 bool DBPF_propertiesType::getPropertyValue( const string propName, string & propValue ) const
 {
-  hash_map< string, string >::const_iterator iter;
+  unordered_map< string, string >::const_iterator iter;
   iter = this->mProperties.find( propName );
   if( iter == this->mProperties.end() )
     return false;
@@ -230,7 +226,7 @@ bool DBPF_propertiesType::getPropertyValue( const string propName, string & prop
 **/
 bool DBPF_CPFtype::getPropertyValue( const string propName, DBPF_CPFitemType & propValue ) const
 {
-  hash_map< string, DBPF_CPFitemType >::const_iterator iter;
+  unordered_map< string, DBPF_CPFitemType >::const_iterator iter;
   iter = this->mProperties.find( propName );
   if( iter == this->mProperties.end() )
     return false;
