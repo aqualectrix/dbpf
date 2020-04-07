@@ -1,0 +1,49 @@
+version 20070601:
+
+	Remove dbpf-recompress's dependency on unistd.h.
+
+	Check for out-of-range file offsets and lengths when
+		opening a DBPF file.
+
+version 20070530:
+
+	dbpf_write now refuses to write a file with duplicate
+		entries in the index.
+
+	A new write disposition, dbpf_write_skip, causes an entry
+		to be ignored.
+
+	A new function dbpf_compare_entries does a lexicographical
+		compare of the type/group/instance of two entries.
+
+	Unsigned numbers changed to int. Non-numbers like
+		type/group/instance ids are still unsigned.
+
+	Removed all gotos.
+
+	Various code cleanup so that everything builds without
+		warnings on g++.
+
+	Replaced a few lingering tab characters with spaces.
+
+	dbpf-recompress:
+
+		Used to print garbage in certain cases when
+			verification failed; fixed.
+
+		Now prints a slightly better error message for a
+			read past end-of-file.
+
+		Include <unistd.h> only on Unix-ish systems.
+
+
+version of 2007/05/15 by dizzy:
+
+	Added <unistd.h> (for unlink).
+
+	Fixed illegal gotos which were preventing compilation with gcc.
+
+
+version 20070503:
+
+	initial release.
