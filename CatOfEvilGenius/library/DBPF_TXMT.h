@@ -7,12 +7,8 @@
 #define DBPF_TXMT_H_CATOFEVILGENIUS
 
 #include <string>  // <string> class
-#ifdef __GNUC__
-#include <ext/hash_map>
-#else
-#include <hash_map>
-#endif
 #include <vector>
+
 #include "DBPF_resource.h"
 #include "DBPF_RCOL.h"
 
