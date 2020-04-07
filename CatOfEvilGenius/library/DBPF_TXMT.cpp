@@ -7,9 +7,9 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <DBPF_types.h>
-#include <DBPF_TXMT.h>
-#include <DBPF_byteStreamFunctions.h>
+#include "DBPF_types.h"
+#include "DBPF_TXMT.h"
+#include "DBPF_byteStreamFunctions.h"
 
 
 
@@ -356,4 +356,3 @@ bool DBPF_TXMTtype::updateRawBytes()
   return true;
 
 } // DBPF_TXMTtype.updateRawBytes
-

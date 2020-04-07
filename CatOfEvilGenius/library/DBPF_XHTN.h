@@ -1,8 +1,8 @@
 #ifndef DBPF_XHTN_H_CATOFEVILGENIUS
 #define DBPF_XHTN_H_CATOFEVILGENIUS
 
-#include <DBPF_resource.h>
-#include <DBPF_CPFresource.h>
+#include "DBPF_resource.h"
+#include "DBPF_CPFresource.h"
 
 class DBPF_XHTNtype : public DBPF_CPFresourceType
 {

@@ -11,9 +11,9 @@
 #include <cstdio>
 #include <cstring>
 
-#include <DBPF.h>
-#include <DBPF_types.h>
-#include <DBPF_resource.h>
+#include "DBPF.h"
+#include "DBPF_types.h"
+#include "DBPF_resource.h"
 
 
 // -------------------------------------------------------------------------
@@ -387,7 +387,7 @@ bool DBPFtype::readHeader()
   printf( "minor %u\n", foo - 1 );
   this->muVersionMinor = foo - 1;
 
-  if( this->muVersionMajor != 1 
+  if( this->muVersionMajor != 1
    || this->muVersionMinor < 0
    || this->muVersionMinor > 1 )
   {
@@ -961,4 +961,3 @@ bool DBPFtype::writeIndexTable( FILE * f, vector< DBPF_resourceType * > & resour
 
   return true;
 }
-

@@ -6,8 +6,8 @@
 #ifndef DBPF_TXTR_H_CATOFEVILGENIUS
 #define DBPF_TXTR_H_CATOFEVILGENIUS
 
-#include <DBPF_resource.h>
-#include <DBPF_RCOL.h>
+#include "DBPF_resource.h"
+#include "DBPF_RCOL.h"
 
 
 class DBPF_TXTRtype : public DBPF_resourceType
@@ -54,4 +54,3 @@ private:
 
 // DBPF_TXTR_H_CATOFEVILGENIUS
 #endif
-

@@ -2,7 +2,7 @@
 #include <cstdio>
 #include <string>
 
-#include <DBPF_GZPS.h>
+#include "DBPF_GZPS.h"
 
 
 
@@ -74,4 +74,3 @@ bool DBPF_GZPStype::setHairColor( int color )
 
   return bSuccess;
 }
-

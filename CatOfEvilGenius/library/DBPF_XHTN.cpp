@@ -2,7 +2,7 @@
 #include <cstdio>
 #include <string>
 
-#include <DBPF_XHTN.h>
+#include "DBPF_XHTN.h"
 
 
 
@@ -74,4 +74,3 @@ bool DBPF_XHTNtype::setHairColor( int color )
 
   return bSuccess;
 }
-

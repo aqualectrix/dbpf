@@ -1,8 +1,8 @@
 #ifndef DBPF_GZPS_H_CATOFEVILGENIUS
 #define DBPF_GZPS_H_CATOFEVILGENIUS
 
-#include <DBPF_resource.h>
-#include <DBPF_CPF.h>
+#include "DBPF_resource.h"
+#include "DBPF_CPF.h"
 
 // these are used by GZPS, XHTN
 #define HAIR_BLACK     1

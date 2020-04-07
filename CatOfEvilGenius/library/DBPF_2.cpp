@@ -4,15 +4,15 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include <DBPF.h>
-#include <DBPFcompress.h>
-#include <DBPF_types.h>
-#include <DBPF_3IDR.h>
-#include <DBPF_GZPS.h>
-#include <DBPF_XHTN.h>
-#include <DBPF_TXMT.h>
-#include <DBPF_TXTR.h>
-#include <DBPF_STR.h>
+#include "DBPF.h"
+#include "DBPFcompress.h"
+#include "DBPF_types.h"
+#include "DBPF_3IDR.h"
+#include "DBPF_GZPS.h"
+#include "DBPF_XHTN.h"
+#include "DBPF_TXMT.h"
+#include "DBPF_TXTR.h"
+#include "DBPF_STR.h"
 
 
 /**
@@ -277,4 +277,3 @@ bool writeCompressedPackage( const char * filename,              // IN
   size_t fileSizeOut = 0;
   return( package.write( filename, resources, fileSizeOut ) );
 }
-

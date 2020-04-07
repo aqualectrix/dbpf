@@ -8,8 +8,8 @@
 
 #include <cstdlib>
 #include <vector>
-#include <DBPF_resource.h>
-#include <DBPF_types.h>       // TGIR type
+#include "DBPF_resource.h"
+#include "DBPF_types.h"       // TGIR type
 
 using namespace std;
 

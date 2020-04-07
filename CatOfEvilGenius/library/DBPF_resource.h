@@ -16,9 +16,9 @@
 #define DBPF_RESOURCE_H_CATOFEVILGENIUS
 
 #include <string>
-#include <DBPF.h> // index entry type
-#include <DBPF_CPF.h> // properties, set of name/value pairs
-#include <DBPF_types.h> // TGIR
+#include "DBPF.h" // index entry type
+#include "DBPF_CPF.h" // properties, set of name/value pairs
+#include "DBPF_types.h" // TGIR
 using namespace std;
 
 

@@ -1,8 +1,8 @@
 #include <cstdlib>
 #include <cstdio>
-#include <DBPF_types.h>
-#include <DBPF_byteStreamFunctions.h>
-#include <DBPF_CPFresource.h>
+#include "DBPF_types.h"
+#include "DBPF_byteStreamFunctions.h"
+#include "DBPF_CPFresource.h"
 
 
 DBPF_CPFresourceType::DBPF_CPFresourceType()
@@ -39,7 +39,7 @@ void DBPF_CPFresourceType::dump( FILE * f ) const
 #endif
 
 
-bool DBPF_CPFresourceType::initFromByteStream( const DBPFindexType & entry, unsigned char * data, 
+bool DBPF_CPFresourceType::initFromByteStream( const DBPFindexType & entry, unsigned char * data,
                                         const unsigned int byteCountToRead )
 {
   // sanity check

@@ -1,8 +1,8 @@
 #ifndef DBPF_GZPS2_H_CATOFEVILGENIUS
 #define DBPF_GZPS2_H_CATOFEVILGENIUS
 
-#include <DBPF_resource.h>
-#include <DBPF_CPFresource.h>
+#include "DBPF_resource.h"
+#include "DBPF_CPFresource.h"
 
 class DBPF_GZPStype : public DBPF_CPFresourceType
 {

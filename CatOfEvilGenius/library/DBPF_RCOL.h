@@ -16,7 +16,7 @@
     * ED534136 LIFO
     * FC6EB1F7 SHPE
     * 49596978 TXMT aka MATD - Material Definition
-    * 1C4A276C TXTR 
+    * 1C4A276C TXTR
 **/
 
 #ifndef DBPF_RCOL_H_CATOFEVILGENIUS
@@ -24,7 +24,7 @@
 
 #include <cstdlib>
 #include <vector>
-#include <DBPF_types.h> // TGIR type
+#include "DBPF_types.h" // TGIR type
 using namespace std;
 
 

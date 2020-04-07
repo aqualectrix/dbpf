@@ -5,9 +5,9 @@
  * abstract base class for other DBPF resources
 **/
 
-#include <DBPF_resource.h>
-#include <DBPF_types.h>
-#include <DBPFcompress.h>
+#include "DBPF_resource.h"
+#include "DBPF_types.h"
+#include "DBPFcompress.h"
 
 // -------------------------------------------------
 
@@ -125,7 +125,7 @@ void DBPF_resourceType::dump( FILE * f ) const
  * returns: true - if this resource is compressed (and initialized and unchanged)
  *          false - if this resource in not compressed,
  *            or if it is not initialized or if it changed.
- * 
+ *
  * purpose: Check if this resource is compressed.  If so, get the uncompressed and compressed sizes.
 </pre>
 **/

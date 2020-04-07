@@ -5,8 +5,8 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <DBPF_STR.h>
-#include <DBPF_byteStreamFunctions.h>
+#include "DBPF_STR.h"
+#include "DBPF_byteStreamFunctions.h"
 
 
 void readByteStream_DBPFtext( unsigned char * & bytes, DBPF_textType & text )
@@ -109,7 +109,7 @@ bool DBPF_STRtype::updateRawBytes()
 
   // allocate new bytes
 
-  unsigned int newByteCount = (unsigned int)((int)(this->muRawBytesCount) + this->miChangeInRawBytesCount); 
+  unsigned int newByteCount = (unsigned int)((int)(this->muRawBytesCount) + this->miChangeInRawBytesCount);
   unsigned char * bytes = new unsigned char[ newByteCount ];
   if( NULL == bytes )
     return false;
@@ -137,7 +137,7 @@ bool DBPF_STRtype::updateRawBytes()
     writeByteStream_DBPFtext( bytes, (this->mTextItems)[i] );
 
 #ifdef _DEBUG
-  size_t bytesWrittenCount = bytes - bytesStart; 
+  size_t bytesWrittenCount = bytes - bytesStart;
   if( bytesWrittenCount != (size_t)newByteCount )
   { fprintf( stderr, "ERROR: DBPF_STRtype.updateRawBytes, bad array size\n" );
     return false;
@@ -274,4 +274,3 @@ bool DBPF_STRtype::removeTextItem( const unsigned short index )
 
   return true;
 }
-

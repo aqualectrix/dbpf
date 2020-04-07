@@ -13,8 +13,8 @@
 #include <hash_map>
 #endif
 #include <vector>
-#include <DBPF_resource.h>
-#include <DBPF_RCOL.h>
+#include "DBPF_resource.h"
+#include "DBPF_RCOL.h"
 
 using namespace std;
 #ifdef __GNUC__
@@ -51,7 +51,7 @@ private:
   // this is only used if block version > 8
   unsigned int muTextureNameCount;
   /**
-   * These are not the necessarily the names of the textures this TXMT uses, 
+   * These are not the necessarily the names of the textures this TXMT uses,
    * especially in the case of CC recolors, rather, these are the names
    * of Maxis textures to use if the expected textures are not available, I think
    *

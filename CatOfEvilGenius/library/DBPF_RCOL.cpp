@@ -5,9 +5,9 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <DBPF_RCOL.h>
-#include <DBPF_byteStreamFunctions.h>
-#include <DBPF_types.h> // type to string functions
+#include "DBPF_RCOL.h"
+#include "DBPF_byteStreamFunctions.h"
+#include "DBPF_types.h" // type to string functions
 
 
 DBPF_RCOLtype::DBPF_RCOLtype()
@@ -176,7 +176,7 @@ bool DBPF_RCOLtype::initFromByteStream( unsigned char * data,    // IN - data, r
 
     this->mIndex.push_back( rcolID );
   }
-  
+
 
   // finished initializing
   this->mbInitialized = true;

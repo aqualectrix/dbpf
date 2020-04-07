@@ -12,8 +12,8 @@
 #else
 #include <hash_map>
 #endif
-#include <DBPF_CPF.h> // DBPF_propertiesType
-#include <DBPF_byteStreamFunctions.h>
+#include "DBPF_CPF.h" // DBPF_propertiesType
+#include "DBPF_byteStreamFunctions.h"
 
 using namespace std;
 #ifdef __GNUC__
@@ -57,7 +57,7 @@ void DBPF_propertiesType::clear()
   if( this->mPropertyKeys.empty() == false )
     this->mPropertyKeys.clear();
   if( this->mProperties.empty() == false )
-    this->mProperties.clear();  
+    this->mProperties.clear();
 }
 
 
@@ -70,7 +70,7 @@ void DBPF_CPFtype::clear()
   if( this->mPropertyKeys.empty() == false )
     this->mPropertyKeys.clear();
   if( this->mProperties.empty() == false )
-    this->mProperties.clear();  
+    this->mProperties.clear();
 }
 
 
@@ -168,7 +168,7 @@ bool DBPF_propertiesType::getKeyAt( const unsigned int i, string & key ) const
 {
   if( i >= this->muPropertyCount )
     return false;
-  
+
   key = this->mPropertyKeys[i];
   return true;
 }
@@ -179,7 +179,7 @@ bool DBPF_CPFtype::getKeyAt( const unsigned int i, string & key ) const
 {
   if( i >= this->muPropertyCount )
     return false;
-  
+
   key = this->mPropertyKeys[i];
   return true;
 }
@@ -189,7 +189,7 @@ bool DBPF_propertiesType::getPairAt( const unsigned int i, string & key, string 
 {
   if( i >= this->muPropertyCount )
     return false;
-  
+
   key = this->mPropertyKeys[i];
   return( getPropertyValue( key, val ) );
 }
@@ -199,7 +199,7 @@ bool DBPF_CPFtype::getPairAt( const unsigned int i, string & key, DBPF_CPFitemTy
 {
   if( i >= this->muPropertyCount )
     return false;
-  
+
   key = this->mPropertyKeys[i];
   return( getPropertyValue( key, val ) );
 }
@@ -606,4 +606,3 @@ bool DBPF_CPFtype::writeToByteStream( unsigned char * & bytes )
 
   return true;
 }
-

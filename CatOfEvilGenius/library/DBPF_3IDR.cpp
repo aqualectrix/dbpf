@@ -6,8 +6,8 @@
 #include <cstdlib>
 #include <cstdio>
 #include <DBPF_3IDR.h>
-#include <DBPF_byteStreamFunctions.h>
-#include <DBPF_types.h>
+#include "DBPF_byteStreamFunctions.h"
+#include "DBPF_types.h"
 
 
 
@@ -243,7 +243,7 @@ bool DBPF_3IDRtype::updateRawBytes()
 
   // allocate new bytes
 
-  unsigned int newByteCount = (unsigned int)((int)(this->muRawBytesCount) + this->miChangeInRawBytesCount); 
+  unsigned int newByteCount = (unsigned int)((int)(this->muRawBytesCount) + this->miChangeInRawBytesCount);
   unsigned char * bytes = new unsigned char[ newByteCount ];
   if( NULL == bytes )
     return false;
@@ -300,4 +300,3 @@ bool DBPF_3IDRtype::updateRawBytes()
 
   return true;
 }
-

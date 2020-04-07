@@ -5,9 +5,9 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <DBPF_types.h>
-#include <DBPF_byteStreamFunctions.h>
-#include <DBPF_TXTR.h>
+#include "DBPF_types.h"
+#include "DBPF_byteStreamFunctions.h"
+#include "DBPF_TXTR.h"
 
 
 DBPF_TXTRtype::DBPF_TXTRtype()
