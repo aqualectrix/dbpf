@@ -5,6 +5,8 @@
 
 #include <cstdlib>
 #include <cstdio>
+#include <cstring>
+
 #include "DBPF_STR.h"
 #include "DBPF_byteStreamFunctions.h"
 

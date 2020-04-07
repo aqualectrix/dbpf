@@ -13,10 +13,12 @@
 
 #include <cstdlib>
 #include <cstdio>
+#include <cstring>
 #include <vector>
-#include "DBPF_byteStreamFunctions.h"
-using namespace std;
 
+#include "DBPF_byteStreamFunctions.h"
+
+using namespace std;
 
 // ================================================================================
 

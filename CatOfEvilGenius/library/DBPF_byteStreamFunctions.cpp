@@ -8,8 +8,9 @@
 #include <cstdlib>
 #include <cstdio>
 #include <string>
-using namespace std;
+#include <cstring>
 
+using namespace std;
 
 /**
 <pre>
@@ -70,10 +71,10 @@ void uint2bytesBigEndian( const unsigned int _foo, unsigned char * bytes )
  *
  *          if given a length two array with values { 0x0A, 0x0B },
  *          the resulting 4 byte integer will have bytes 0x 00 00 0B 0A    REVERSED!!!
- * 
+ *
  *          if given a length three array with values { 0x0A, 0x0B, 0x0C },
  *          the resulting 4 byte integer will have bytes 0x 00 0C 0B 0A    REVERSED!!!
- * 
+ *
  *          if given a length three array with values { 0x0A, 0x0B, 0x0C, 0x0D },
  *          the resulting 4 byte integer will have bytes 0x 0D 0C 0B 0A    REVERSED!!!
 </pre>
@@ -225,10 +226,10 @@ void float2bytesBigEndian( const float _foo, unsigned char * bytes )
  *
  *          if given a length two array with values { 0x0A, 0x0B },
  *          the resulting 4 byte integer will have bytes 0x 00 00 0B 0A    REVERSED!!!
- * 
+ *
  *          if given a length three array with values { 0x0A, 0x0B, 0x0C },
  *          the resulting 4 byte integer will have bytes 0x 00 0C 0B 0A    REVERSED!!!
- * 
+ *
  *          if given a length three array with values { 0x0A, 0x0B, 0x0C, 0x0D },
  *          the resulting 4 byte integer will have bytes 0x 0D 0C 0B 0A    REVERSED!!!
 </pre>
@@ -423,7 +424,7 @@ void writeByteStream_strNullTerminated( unsigned char * & bytes, const string & 
   for( size_t i = 0; i < len; ++i )
     bytes[i] = (str.c_str())[i];
   bytes[len] = '\0';
-  
+
   // advance bytes pointer
   bytes += (len+1);
 }
@@ -545,4 +546,3 @@ void writeByteStream_cSGResource( unsigned char * & bytes, const string & str )
   unsigned char strLength = (unsigned char)(strlen( _str ));
   writeByteStream_cSGResource( bytes, strLength, _str );
 }
-

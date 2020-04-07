@@ -5,6 +5,7 @@
 
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #include <string>
 #include <vector>
 #ifdef __GNUC__
@@ -12,6 +13,7 @@
 #else
 #include <hash_map>
 #endif
+
 #include "DBPF_CPF.h" // DBPF_propertiesType
 #include "DBPF_byteStreamFunctions.h"
 

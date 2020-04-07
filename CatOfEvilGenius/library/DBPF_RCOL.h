@@ -51,7 +51,7 @@ public:
   // how big is the RCOL in bytes?
   unsigned int getRawByteCount() const { return this->muRawBytesCount; }
   // write out raw byte data of this RCOL to the given byte array
-  bool DBPF_RCOLtype::writeToByteStream( unsigned char * & bytes );
+  bool writeToByteStream( unsigned char * & bytes );
 
 #ifdef _DEBUG
   void dump( FILE * f ) const;

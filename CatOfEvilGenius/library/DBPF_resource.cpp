@@ -5,6 +5,8 @@
  * abstract base class for other DBPF resources
 **/
 
+#include <cstring>
+
 #include "DBPF_resource.h"
 #include "DBPF_types.h"
 #include "DBPFcompress.h"

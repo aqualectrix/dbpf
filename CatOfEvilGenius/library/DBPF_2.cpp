@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include <cstdio>
+#include <cstring>
 
 #include "DBPF.h"
 #include "DBPFcompress.h"
