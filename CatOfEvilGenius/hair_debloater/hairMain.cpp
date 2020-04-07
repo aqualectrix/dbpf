@@ -3,15 +3,15 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include "DBPF.h"
-#include "DBPFcompress.h"
-#include "DBPF_types.h"
-#include "DBPF_3IDR.h"
-#include "DBPF_GZPS.h"
-#include "DBPF_XHTN.h"
-#include "DBPF_TXMT.h"
-#include "DBPF_TXTR.h"
-#include "DBPF_STR.h"
+#include "../library/DBPF.h"
+#include "../library/DBPFcompress.h"
+#include "../library/DBPF_types.h"
+#include "../library/DBPF_3IDR.h"
+#include "../library/DBPF_GZPS.h"
+#include "../library/DBPF_XHTN.h"
+#include "../library/DBPF_TXMT.h"
+#include "../library/DBPF_TXTR.h"
+#include "../library/DBPF_STR.h"
 
 
 extern bool hairProcess( const char * filename, const int hairColor, const char * strFamily, const char * strHatTXTR );
