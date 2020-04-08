@@ -1,3 +1,12 @@
+version 20200407:
+
+	Remove static modifiers on compress() and decompress() so they
+		can be used in code outside of this file (e.g., CatOfEvilGenius's
+		DBPFcompress.cpp)
+
+	find_holes() now returns NULL instead of false when it fails
+	  in order to comply with stricter type-checking by the compiler.
+		
 version 20070601:
 
 	Remove dbpf-recompress's dependency on unistd.h.

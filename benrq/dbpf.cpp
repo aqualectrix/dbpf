@@ -145,8 +145,8 @@ static inline
 void mydelete(void* p) { if (p) free(p); }
 
 
-static bool decompress(const byte* src, int compressed_size, byte* dst, int uncompressed_size, bool truncate);
-static byte* compress(const byte* src, const byte* srcend, byte* dst, byte* dstend, bool pad);
+bool decompress(const byte* src, int compressed_size, byte* dst, int uncompressed_size, bool truncate);
+byte* compress(const byte* src, const byte* srcend, byte* dst, byte* dstend, bool pad);
 static byte* try_compress(const byte* src, int srclen, int* dstlen);
 
 
@@ -552,11 +552,11 @@ range* find_holes(
     int* num_holes)
 {
     range* used = mynew<range>(entry_count + 4);
-    if (!used) return false;
+    if (!used) return NULL;
     range* holes = mynew<range>(entry_count + 5);
     if (!holes) {
         mydelete(used);
-        return false;
+        return NULL;
     }
 
     for (int i = 0; i < entry_count; ++i) {
@@ -847,7 +847,7 @@ struct dbpf_compressed_file_header  // 9 bytes
 #define DBPF_COMPRESSION_QFS (0xFB10)
 
 
-static
+
 bool decompress(const byte* src, int compressed_size, byte* dst, int uncompressed_size, bool truncate)
 {
     const byte* src_end = src + compressed_size;
@@ -1201,7 +1201,6 @@ unsigned longest_match(
 
 /* Returns the end of the compressed data if successful, or NULL if we overran the output buffer */
 
-static
 byte* compress(const byte* src, const byte* srcend, byte* dst, byte* dstend, bool pad)
 {
     unsigned match_start = 0;
