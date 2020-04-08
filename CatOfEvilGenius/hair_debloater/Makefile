@@ -36,4 +36,4 @@ benrq_dbpf.o :  ../../benrq/dbpf.cpp ../../benrq/dbpf.h
 
 .PHONY : clean
 clean :
-	rm hair_debloater $(objects)
+	rm hair_debloater* $(objects)
