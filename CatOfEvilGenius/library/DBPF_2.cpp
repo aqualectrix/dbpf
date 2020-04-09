@@ -187,45 +187,34 @@ bool readPackage( const char * filename,                         // IN
     }
 
 
-    // if resource is a type we want, make pointer of appropriate type, so it can be decoded later,
-    // otherwise, just store it undecoded type resource
+    // If resource is a type we want, make pointer of appropriate type,
+    // so it can be decoded later
+    // Otherwise, just store it undecoded type resource
 
     if( true == bInitThis )
     {
-      if( DBPF_TXMT == entry.muTypeID )
-      {
-        DBPF_TXMTtype * pFooRes = new DBPF_TXMTtype();
-        pResource = pFooRes;
-      }
-      else if( DBPF_GZPS == entry.muTypeID )
-      {
-        DBPF_GZPStype * pFooRes = new DBPF_GZPStype();
-        pResource = pFooRes;
-      }
-      else if( DBPF_3IDR == entry.muTypeID )
-      {
-        DBPF_3IDRtype * pFooRes = new DBPF_3IDRtype();
-        pResource = pFooRes;
-      }
-      else if( DBPF_TXTR == entry.muTypeID )
-      {
-        DBPF_TXTRtype * pFooRes = new DBPF_TXTRtype();
-        pResource = pFooRes;
-      }
-      else if( DBPF_STR == entry.muTypeID )
-      {
-        DBPF_STRtype * pFooRes = new DBPF_STRtype();
-        pResource = pFooRes;
-      }
-      else if( DBPF_XHTN == entry.muTypeID )
-      {
-        DBPF_XHTNtype * pFooRes = new DBPF_XHTNtype();
-        pResource = pFooRes;
-      }
-      else
-      {
-        fprintf( stderr, "ERROR: readPackage, need to construct resource to init, but type no in if/else chain, %x\n", entry.muTypeID );
-        return false;
+      switch(entry.muTypeID) {
+        case DBPF_3IDR:
+          pResource = new DBPF_3IDRtype();
+          break;
+        case DBPF_GZPS:
+          pResource = new DBPF_GZPStype();
+          break;
+        case DBPF_STR:
+          pResource = new DBPF_STRtype();
+          break;
+        case DBPF_TXMT:
+          pResource = new DBPF_TXMTtype();
+          break;
+        case DBPF_TXTR:
+          pResource = new DBPF_TXTRtype();
+          break;
+        case DBPF_XHTN:
+          pResource = new DBPF_XHTNtype();
+          break;
+        default:
+          fprintf( stderr, "ERROR: readPackage, need to construct resource to init, but type %x is not in switch statement.\n", entry.muTypeID );
+          return false;
       }
     }
     else
