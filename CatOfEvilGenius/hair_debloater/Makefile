@@ -1,15 +1,9 @@
 objects = hairMain.o hairProcess.o \
-					../library/DBPF.o ../library/DBPF_2.o \
-					../library/DBPFcompress.o ../library/DBPF_types.o \
-					../library/DBPF_3IDR.o ../library/DBPF_GZPS.o \
-					../library/DBPF_XHTN.o ../library/DBPF_TXMT.o \
-					../library/DBPF_TXTR.o ../library/DBPF_STR.o \
-					../library/DBPF_resource.o ../library/DBPF_CPF.o \
-					../library/DBPF_RCOL.o ../library/DBPF_CPFresource.o \
-					../library/DBPF_byteStreamFunctions.o benrq_dbpf.o
+					benrq_dbpf.o
 
 hair_debloater : $(objects)
-	g++ -o hair_debloater $(objects)
+	$(MAKE) -C ../library libCatOfEvilGenius_dbpf.a
+	g++    -o hair_debloater $(objects) -L ../library -l CatofEvilGenius_dbpf
 
 hairMain.o : ../library/DBPF.h \
              ../library/DBPFcompress.h \
@@ -32,7 +26,7 @@ hairProcess.o : ../library/DBPF.h \
 						 		../library/DBPF_STR.h
 
 benrq_dbpf.o :  ../../benrq/dbpf.cpp ../../benrq/dbpf.h
-	g++	-c -o benrq_dbpf.o ../../benrq/dbpf.cpp
+	g++    -c -o benrq_dbpf.o ../../benrq/dbpf.cpp
 
 .PHONY : clean
 clean :

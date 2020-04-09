@@ -1,21 +1,9 @@
 objects = sorterMain.o sortProcess.o \
-					../../CatOfEvilGenius/library/DBPF.o \
-					../../CatOfEvilGenius/library/DBPF_resource.o \
-					../../CatOfEvilGenius/library/DBPF_CPF.o \
-					../../CatOfEvilGenius/library/DBPF_CPFresource.o \
-					../../CatOfEvilGenius/library/DBPF_byteStreamFunctions.o \
-					../../CatOfEvilGenius/library/DBPFcompress.o \
-					../../CatOfEvilGenius/library/DBPF_types.o \
-					benrq_dbpf.o \
-					../../CatOfEvilGenius/library/DBPF_2.o \
-					../../CatOfEvilGenius/library/DBPF_TXMT.o \
-					../../CatOfEvilGenius/library/DBPF_3IDR.o \
-					../../CatOfEvilGenius/library/DBPF_TXTR.o \
-					../../CatOfEvilGenius/library/DBPF_STR.o \
-					../../CatOfEvilGenius/library/DBPF_RCOL.o
+					benrq_dbpf.o
 
 sorter : $(objects)
-	g++ -o sorter $(objects)
+	$(MAKE) -C ../../CatOfEvilGenius/library libCatOfEvilGenius_dbpf.a
+	g++ -o sorter $(objects) -L ../../CatOfEvilGenius/library -l CatOfEvilGenius_dbpf
 
 sortProcess.o : ../../CatOfEvilGenius/library/DBPF.h \
                 ../../CatOfEvilGenius/library/DBPF_types.h
