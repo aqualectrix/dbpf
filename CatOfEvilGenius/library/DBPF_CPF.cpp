@@ -383,7 +383,13 @@ bool DBPF_CPFtype::setPropertyValue( const string propName, DBPF_CPFitemType & p
   // is new value of the correct type?
 
   if( oldValue.miType != propValue.miType )
-  { fprintf( stderr, "ERROR: DBPF_CPFtype.setPropertyValue, new value is of wrong type\n" );
+  { char oldValType[20];
+    char propValType[20];
+    oldValue.typeToString(oldValType);
+    propValue.typeToString(propValType);
+    fprintf( stderr, "ERROR: DBPF_CPFtype.setPropertyValue,  new value is of wrong type: %s. Expected type is %s.\n",
+                      propValType,
+                      oldValType);
     return false;
   }
 

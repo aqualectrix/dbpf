@@ -24,8 +24,8 @@ using namespace stdext;
 
 
 #define CPF_BOOL   0xCBA908E1
-#define CPF_INT    0xEB61E4F7
-#define CPF_INT2   0x0C264712
+#define CPF_INT    0xEB61E4F7 // uint
+#define CPF_INT2   0x0C264712 // int
 #define CPF_FLOAT  0xABC78708
 #define CPF_STRING 0x0B8BEA18
 
