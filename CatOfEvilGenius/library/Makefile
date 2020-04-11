@@ -1,8 +1,8 @@
 objects = DBPF.o DBPF_types.o DBPF_resource.o \
 					DBPF_2.o DBPFcompress.o DBPF_byteStreamFunctions.o \
 					DBPF_CPF.o DBPF_CPFresource.o \
-					DBPF_3IDR.o DBPF_GZPS.o DBPF_RCOL.o DBPF_STR.o \
-					DBPF_TXMT.o DBPF_TXTR.o DBPF_XHTN.o
+					DBPF_3IDR.o DBPF_BINX.o DBPF_GZPS.o DBPF_RCOL.o \
+					DBPF_STR.o DBPF_TXMT.o DBPF_TXTR.o DBPF_XHTN.o
 
 libCatOfEvilGenius_dbpf.a : $(objects)
 	ar rcs libCatOfEvilGenius_dbpf.a $(objects)
@@ -26,6 +26,7 @@ DBPF_CPFresource.o : DBPF_CPFresource.h DBPF_types.h \
 
 # Resource type implementations
 DBPF_3IDR.o : DBPF_3IDR.h DBPF_byteStreamFunctions.h DBPF_types.h
+DBPF_BINX.o : DBPF_BINX.h
 DBPF_GZPS.o : DBPF_GZPS.h
 DBPF_RCOL.o : DBPF_RCOL.h DBPF_byteStreamFunctions.h \
               DBPF_types.h

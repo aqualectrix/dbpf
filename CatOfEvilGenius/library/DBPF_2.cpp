@@ -9,6 +9,7 @@
 #include "DBPFcompress.h"
 #include "DBPF_types.h"
 #include "DBPF_3IDR.h"
+#include "DBPF_BINX.h"
 #include "DBPF_GZPS.h"
 #include "DBPF_XHTN.h"
 #include "DBPF_TXMT.h"
@@ -196,6 +197,9 @@ bool readPackage( const char * filename,                         // IN
       switch(entry.muTypeID) {
         case DBPF_3IDR:
           pResource = new DBPF_3IDRtype();
+          break;
+        case DBPF_BINX:
+          pResource = new DBPF_BINXtype();
           break;
         case DBPF_GZPS:
           pResource = new DBPF_GZPStype();
