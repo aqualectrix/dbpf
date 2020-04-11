@@ -442,23 +442,33 @@ bool DBPF_CPFtype::initFromByteStream( unsigned char * data,
 
   // read CPF data
   // =============
-
-  // CPF type ID, should always be 0xCBE7505E
   unsigned int u = 0;
   readByteStream_uint( data, 4, u );
   this->muTypeID = u;
-//  printf( "CPF type ID: %x\n", u ); // DEBUG
 
-/*
-  // there may be several different valid CPF type IDs
-  if( u != 0xCBE7505E
-   && u != 0xCBE750E0
-    )
-  { fprintf( stderr, "ERROR: DBPF_CPFtype.initFromByteStream, bad type ID %x\n", u );
-    restOfData = data - 4; // back up to before this number
+  /*
+   * Oddly-formed files (usually very old), based on the two I found
+   * and on the CPF Talk page, seem to always have the id read as 0x6D783F3C.
+   * See: http://simswiki.info/wiki.php?title=Talk:CPF, "Another CPF Type"
+   * This is such a rare case that rather than try to handle them,
+   * we bail and tell the user how to fix the problem in SimPE.
+   *
+   * In case the talk page information goes away and someone wants to tackle
+   * actually handling this case, here's what the link above says:
+   *
+   * "I've discovered in some very old packages another CPF type ID - 0x6D783F3C.
+   *  It's not the usual format, so I'll re-post when I've worked it out.
+   *    Ignore the above - this is an uncompressed XML chunk, so to read you
+   *    have to backtrack 4 bytes then reading the entire thing as a single
+   *    XML string and process as normal."
+   *
+   * Oddly, this snippet on the Talk page has no author attribution.
+   */
+  unsigned int bail_on_this_type = 0x6D783F3C;
+  if (bail_on_this_type == u) {
+    fprintf(stderr, "\n\nERROR: Whoops! Your file is saved in a way this program can't handle. Please open the file and make the modifications manually in SimPE.\n(After making and saving modifications once in SimPE, this program will be able to handle this file in the future.)\n\n");
     return false;
   }
-*/
 
   // CPF version
   unsigned short s = 0;
