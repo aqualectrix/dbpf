@@ -11,7 +11,7 @@
 
 using namespace std;
 
-extern bool sortProcess (const char* filename, string sortindex);
+extern bool sortProcess (const char* filename, const int sortindex);
 
 int main (int argc, char * argv[]) {
 
@@ -22,16 +22,16 @@ int main (int argc, char * argv[]) {
   }
 
   ostringstream usage;
-  usage << endl << "usage: " << argv[0] << " filename hex_index";
+  usage << endl << "usage: " << argv[0] << " hex_index filename(s)";
 
   // check parameter count
-  if (argc != 3) {
+  if (argc < 3) {
     cerr << usage.str() << endl;
     return 1;
   }
 
   // check hex_index for validity; each character should be a valid hex digit
-  string hex_index = string(argv[2]);
+  string hex_index = string(argv[1]);
   for (int i = 0; i < hex_index.length(); i++) {
     if (!isxdigit(hex_index[i])) {
       cerr << usage.str() <<
@@ -45,8 +45,15 @@ int main (int argc, char * argv[]) {
     }
   }
 
-  // process file
-  sortProcess(argv[1], hex_index);
+
+  // turn "hex" string into unsigned int
+  unsigned int index = stoul(hex_index, NULL, 16);
+
+  // process file(s)
+  for (int fi = 2; fi < argc; fi++)
+  {
+    sortProcess(argv[fi], index);
+  }
 
   return 0;
 }
