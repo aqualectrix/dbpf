@@ -1,7 +1,7 @@
 objects = sorterMain.o sortProcess.o \
 					benrq_dbpf.o
 
-sorter : $(objects)
+sorter : $(objects) ../../CatOfEvilGenius/library/libCatOfEvilGenius_dbpf.a
 	$(MAKE) -C ../../CatOfEvilGenius/library libCatOfEvilGenius_dbpf.a
 	g++ -o sortindex $(objects) -L ../../CatOfEvilGenius/library -l CatOfEvilGenius_dbpf
 
