@@ -2,7 +2,7 @@ LDFLAGS = -L ../../CatOfEvilGenius/library -L ../../benrq/
 LDLIBS = -l CatOfEvilGenius_dbpf -l benrq_dbpf
 
 sortindex : sortindex.py sortProcessWrapper.py libSortProcess.so
-	pyinstaller sortindex.py
+	pyinstaller sortindex.py --add-binary="libSortProcess.so;."
 
 libSortProcess.so: shared_sortProcess.o
 	g++ -shared -static-libgcc -static-libstdc++ -o libSortProcess.so shared_sortProcess.o \

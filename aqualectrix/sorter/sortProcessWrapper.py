@@ -2,8 +2,7 @@ import ctypes
 import pathlib
 
 # Load shared library into ctypes
-libname = pathlib.Path().absolute() / "libSortProcess.so"
-c_lib = ctypes.CDLL(str(libname))
+c_lib = ctypes.CDLL("./libSortProcess.so")
 
 # Provide details about sortProcess
 # bool sortProcess (const char* filename, const int sortindex)
