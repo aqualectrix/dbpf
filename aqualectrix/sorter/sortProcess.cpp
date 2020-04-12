@@ -13,6 +13,7 @@
 
 using namespace std;
 
+extern "C" // for exporting to shared library for use in Python
 bool sortProcess(const char* filename, const int index) {
   // extra crunchy goodness for restoring state after outputting in hex format
   ios_base::fmtflags f(cout.flags());
