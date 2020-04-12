@@ -2,3 +2,5 @@
 *.exe
 *.package
 *.a
+*.so
+*.pyc
