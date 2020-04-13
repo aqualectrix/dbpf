@@ -1,6 +1,7 @@
 import argparse
-
 import sortProcessWrapper
+
+from gooey import Gooey
 
 def main(args):
     args = parse_args(args)
@@ -8,7 +9,7 @@ def main(args):
     for f in args.filenames:
         sortProcessWrapper.sortindexFile(f, args.hex_index)
 
-
+@Gooey
 def parse_args(args):
     parser = argparse.ArgumentParser(description = "Change the sortindex of the given files to the given hex value.")
     parser.add_argument("hex_index", type=hex, help = "Value to apply to sortindex, in hex.")
