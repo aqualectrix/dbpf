@@ -1,7 +1,6 @@
 import sortProcessWrapper
 import mapReader
-
-from warnings import warn
+import mapSorter
 
 from gooey import Gooey
 from gooey import GooeyParser
@@ -16,11 +15,7 @@ def main(args):
     if args.mapfile:
         suffix_map = mapReader.parseMapFile(args.mapfile)
         for f in args.filenames:
-            suffix = f.split("_")[-1].split(".")[0].casefold()
-            if not suffix_map[suffix]:
-                warn("Suffix " + suffix + " was not found in your map. " + f + " will not be sorted.")
-            else:
-                sortProcessWrapper.sortindexFile(f, suffix_map[suffix])
+            mapSorter.sortindexFile(f, suffix_map)
 
 @Gooey
 def parse_args(args):
