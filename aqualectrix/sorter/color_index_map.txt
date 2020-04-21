@@ -1,0 +1,68 @@
+# Add lines in the color : hexindex style below.
+# Capitalization of color name or letters in the hexindex doesn't matter.
+# Spaces before and after the colon don't matter.
+# Lines starting with the pound sign are comments and don't affect the program.
+# Note that higher indexes show up earlier in the catalog.
+
+# Whites and unsortables
+White : 00
+Timebomb : 00
+
+Candyfloss : 01
+Galaxy : 01
+Mermaid : 01
+Rainbow : 01
+
+# Reds
+
+# Oranges
+
+# Yellows
+
+# Greens
+Semtex : 43
+Fulminant : 45
+DarkGreen : 45
+Hangfire : 47
+LuckyClover : 47
+Xenobiology : 48
+Aether : 49
+Jade : 49
+Pyrodex : 50
+SeaGreen : 50
+SeaNymph : 50
+Shockwave : 51
+
+# Blues
+Aeronautics : 55
+Hydrazine : 57
+Napalm : 58
+Voyager : 58
+BlueOpal : 59
+LightBlue: 59
+LightBlueOmbre: 59
+Cannonball: 60
+
+# Purples
+HMX : 62
+Hazardous : 63
+MidnightBlue : 63
+Opal : 67
+SoftNebula : 67
+Fluorophore : 68
+BlastingAgent : 69
+Purple : 69
+Detonator : 70
+DarkPurple : 70
+Lilac : 72
+Toxicity : 75
+
+# Pinks
+Combustible : 80
+DarkRedViolet : 80
+Afterburner : 85
+Orchid : 85
+Nebula : 87
+Powdercake : 89
+Pentolite : 95
+BubblegumPink : 95
