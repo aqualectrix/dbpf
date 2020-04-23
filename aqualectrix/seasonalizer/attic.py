@@ -1,15 +1,72 @@
 import os
 import shutil
 
+Seasons = {"Spring": ["Spring"],
+           "Summer": ["Summer"],
+           "Fall/Autumn": ["Fall", "Autumn"],
+           "Winter": ["Winter"]}
+
 def box(name, dir):
+    '''
+    Make a zip archive of the given dir, with the given name,
+    then deletes the dir.
+    '''
     # We set root_dir to the parent of dir so that files will be
     # zipped into a folder, and hence unzipped into a folder.
     shutil.make_archive(name, 'zip', os.path.join(dir, os.pardir), dir)
     shutil.rmtree(dir)
 
 def unbox(file, location):
+    '''
+    Unzips the given archive file to the given location,
+    then deletes the file.
+    '''
     shutil.unpack_archive(file, location, 'zip')
     os.remove(file)
+
+def isSeasonable(season, name):
+    '''
+    Returns true if the name contains the season (in any case).
+    'Fall' and 'Autumn' are equivalent.
+    '''
+    # if season != "Fall/Autumn":
+    #     return season.casefold() in name.casefold()
+    # else:
+    #     return "fall".casefold() in name.casefold() or
+    #            "autumn".casefold() in name.casefold()
+
+    return any(seasonname.casefold() in name.casefold() for seasonname in Seasons[season])
+
+
+def pack_away_unseasonables(season, dir):
+    '''
+    Boxes up any subdirectories of dir that do *not* contain the season
+    in their names.
+    '''
+    wd = os.getcwd()
+    os.chdir(dir)
+    try:
+        with os.scandir(dir) as entries:
+            for entry in entries:
+                if entry.is_dir() and isSeasonable(season, entry.name):
+                    box(entry.name, entry.name)
+    finally:
+        os.chdir(wd)
+
+
+def unpack_seasonables(season, dir):
+    '''
+    Unboxes any .zip files in dir that *do* contain the season in their names.
+    '''
+    wd = os.getcwd()
+    os.chdir(dir)
+    try:
+        with os.scandir(dir) as entries:
+            for entry in entries:
+                if entry.is_file() and entry.name.split('.')[-1] == 'zip' and isSeasonable(season, entry.name):
+                    unbox(entry.name, os.curdir)
+    finally:
+        os.chdir(wd)
 
 # Tests
 # This is just an experimentation area to ensure I understand how
@@ -21,7 +78,7 @@ class TestAtticStorage(unittest.TestCase):
     TEST_TMP = "test_tmp"
     PACKABLE_DIR = "numbers"
 
-    def test_golden(self):
+    def test_goldenBoxUnbox(self):
         box(self.PACKABLE_DIR, self.PACKABLE_DIR)
         self.assertTrue(os.path.isfile(self.PACKABLE_DIR + ".zip"))
         self.assertFalse(os.path.exists(self.PACKABLE_DIR))
