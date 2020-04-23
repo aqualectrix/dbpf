@@ -1,0 +1,1 @@
+Undecided clothing can be left outside of a folder; the Seasonalizer will not process it.
