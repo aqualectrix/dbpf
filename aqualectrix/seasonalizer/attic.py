@@ -54,7 +54,7 @@ def pack_away_unseasonables(season, dir):
     wd = os.getcwd()
     os.chdir(dir)
     try:
-        with os.scandir(dir) as entries:
+        with os.scandir(os.curdir) as entries:
             for entry in entries:
                 if entry.is_dir() and isEligible(entry.name) and not isSeasonable(season, entry.name):
                     box(entry.name, entry.name)
@@ -69,7 +69,7 @@ def unpack_seasonables(season, dir):
     wd = os.getcwd()
     os.chdir(dir)
     try:
-        with os.scandir(dir) as entries:
+        with os.scandir(os.curdir) as entries:
             for entry in entries:
                 if entry.is_file() and entry.name.split('.')[-1] == 'zip' and isSeasonable(season, entry.name):
                     unbox(entry.name, os.curdir)
