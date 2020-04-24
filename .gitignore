@@ -7,3 +7,4 @@
 **/dist
 **/build
 *.spec
+aqualectrix/seasonalizer/Example/*.zip
