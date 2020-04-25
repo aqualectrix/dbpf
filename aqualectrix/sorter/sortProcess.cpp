@@ -16,9 +16,9 @@ using namespace std;
 extern "C" // for exporting to shared library for use in Python
 bool sortProcess(const char* filename, const int index) {
   // extra crunchy goodness for restoring state after outputting in hex format
-  ios_base::fmtflags f(cout.flags());
-  clog << endl << "Sorting " << filename << " into index " << hex << index << "..." << endl;
-  cout.flags(f);
+  // ios_base::fmtflags f(cout.flags());
+  // clog << endl << "Sorting " << filename << " into index " << hex << index << "..." << endl;
+  // cout.flags(f);
 
   DBPFtype package;
   vector<DBPF_resourceType*> resources;
@@ -29,7 +29,7 @@ bool sortProcess(const char* filename, const int index) {
 
   // Open package file and read/populate chosen (typesToInit) resources.
   if(!readPackage(filename, package, typesToInit, resources)) {
-    clog << "Opening and reading from " << filename << " failed. Sorting aborted." << endl;
+    cerr << "Opening and reading from " << filename << " failed. Sorting aborted." << endl;
     return false;
   }
 
@@ -46,23 +46,24 @@ bool sortProcess(const char* filename, const int index) {
 
     if (DBPF_BINX == pResource->getType()) {
       if (((DBPF_BINXtype*)pResource)->setSortIndex(index)) {
-        clog << "\t" << "Set BINX resource " << i << "." << endl;
+        // clog << "\t" << "Set BINX resource " << i << "." << endl;
       }
     }
   }
 
-  clog << "Sorting complete!" << endl;
+  // clog << "Sorting complete!" << endl;
 
   // Write back to file
-  clog << endl << "Overwriting file " << filename << "..." << endl;
+  // clog << endl << "Overwriting file " << filename << "..." << endl;
   bool write_success = writeCompressedPackage(filename, package, resources);
   if (!write_success) {
     cerr << "Writing to file " << filename << " failed. File may be corrupted... " <<
             "or you may have the file open somewhere else (SimPE, maybe?). " <<
             "If so, close the file elsewhere and try again." << endl;
-  } else {
-    clog << "File written!" << endl;
   }
+  // else {
+  //   clog << "File written!" << endl;
+  // }
 
   // Clean up
   if (!resources.empty()) {

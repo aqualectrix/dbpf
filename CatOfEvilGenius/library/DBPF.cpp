@@ -382,10 +382,10 @@ bool DBPFtype::readHeader()
 
   unsigned int foo;
   fread( &foo, sizeof( unsigned int ), 1, this->mFile );
-  printf( "major %u\n", foo );
+  // printf( "major %u\n", foo );
   this->muVersionMajor = foo;
   fread( &foo, sizeof( unsigned int ), 1, this->mFile );
-  printf( "minor %u\n", foo - 1 );
+  // printf( "minor %u\n", foo - 1 );
   this->muVersionMinor = foo - 1;
 
   if( this->muVersionMajor != 1
@@ -415,7 +415,7 @@ bool DBPFtype::readHeader()
 
   // index entry count
   fread( &(this->muIndexEntryCount), sizeof( unsigned int ), 1, this->mFile );
-  printf( "index entry count: %u\n", this->muIndexEntryCount );
+  // printf( "index entry count: %u\n", this->muIndexEntryCount );
 
   // index offset
   fread( &(this->muIndexOffset), sizeof( unsigned int ), 1, this->mFile );
@@ -427,9 +427,9 @@ bool DBPFtype::readHeader()
   fread( &(this->muHoleEntryCount), sizeof( unsigned int ), 1, this->mFile );
   fread( &(this->muHoleOffset),     sizeof( unsigned int ), 1, this->mFile );
   fread( &(this->muHoleSize),       sizeof( unsigned int ), 1, this->mFile );
-  printf( "hole entry count: %u\n", this->muHoleEntryCount );
-  printf( "hole offset: %u\n", this->muHoleOffset );
-  printf( "hole size: %u\n", this->muHoleSize );
+  // printf( "hole entry count: %u\n", this->muHoleEntryCount );
+  // printf( "hole offset: %u\n", this->muHoleOffset );
+  // printf( "hole size: %u\n", this->muHoleSize );
 
   // index minor version
   fread( &(this->muIndexVersionMinor), sizeof( unsigned int ), 1, this->mFile );
@@ -464,7 +464,7 @@ bool DBPFtype::readIndexTable()
   bool bRead2ndInstanceID = ( this->muIndexVersionMinor == 1 ) ? true : false;
   bool bReadLocation = true;
 
-  printf( "index offset: %u\n", this->muIndexOffset );
+  // printf( "index offset: %u\n", this->muIndexOffset );
   int offset = (int)(this->muIndexOffset );
   if( offset < 0 )
   { fprintf( stderr, "ERROR: DBPFtype.readIndexTable, negative offset %i\n", offset );
