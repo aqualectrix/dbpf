@@ -25,14 +25,7 @@ def main(args):
             print("Processing: " + str(n) + "/" + str(total))
             sort_success[f] = mapSorter.sortindexFile(f, suffix_map)
 
-    if any(success for success in sort_success.values()):
-        print("Sorted:")
-        for f, s in filter(lambda item: item[1], sort_success.items()):
-            print(os.path.basename(f))
-    if any(not success for success in sort_success.values()):
-        print("Skipped:")
-        for f, s in filter(lambda item: not item[1], sort_success.items()):
-            print(os.path.basename(f))
+    printSummary(sort_success)
 
 @Gooey(
     # General
@@ -60,6 +53,16 @@ def parse_args(args):
 def hex(hex_string):
     value = int(hex_string, 16)
     return value
+
+def printSummary(sort_success):
+    if any(success for success in sort_success.values()):
+        print("Sorted:")
+        for f, s in filter(lambda item: item[1], sort_success.items()):
+            print(os.path.basename(f))
+    if any(not success for success in sort_success.values()):
+        print("Skipped:")
+        for f, s in filter(lambda item: not item[1], sort_success.items()):
+            print(os.path.basename(f))
 
 if __name__ == '__main__':
     import sys
