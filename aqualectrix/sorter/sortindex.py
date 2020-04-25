@@ -8,24 +8,29 @@ from gooey import GooeyParser
 def main(args):
     args = parse_args(args)
 
-    if args.index:
-        for f in args.filenames:
-            sortProcessWrapper.sortindexFile(f, args.hex_index)
+    if args.Index:
+        for f in args.Filenames:
+            sortProcessWrapper.sortindexFile(f, args.Index)
 
-    if args.mapfile:
-        suffix_map = mapReader.parseMapFile(args.mapfile)
-        for f in args.filenames:
+    if args.Mapfile:
+        suffix_map = mapReader.parseMapFile(args.Mapfile)
+        for f in args.Filenames:
             mapSorter.sortindexFile(f, suffix_map)
 
-@Gooey
+@Gooey(
+    # General
+    advanced = True,
+    program_name = "SortIndexer",
+    show_restart_button = False
+)
 def parse_args(args):
-    parser = GooeyParser(description = "Change the sortindex of the given files to the given hex value.")
+    parser = GooeyParser(description = "Sort any BodyShop content. Higher numbers come earlier in the catalog!")
 
     indexGroup = parser.add_mutually_exclusive_group(required = True)
-    indexGroup.add_argument("-i", "--index", type=hex, help = "Value to apply to sortindex, in hex.")
-    indexGroup.add_argument("-m", "--mapfile", help = "File listing suffix:index pairs. Sortindex to apply is determined by the suffix (characters after the last _ in the file name) of the file.", widget = "FileChooser")
+    indexGroup.add_argument("-i", "--Index", type=hex, help = "Value to apply to sortindex, in hex.")
+    indexGroup.add_argument("-m", "--Mapfile", help = "File listing suffix:index pairs. Sortindex to apply is determined by the suffix (characters after the last _ in the file name) of the file.", widget = "FileChooser")
 
-    parser.add_argument("filenames", help = "File(s) to process", nargs = "*", widget="MultiFileChooser")
+    parser.add_argument("Filenames", help = "File(s) to process", nargs = "*", widget="MultiFileChooser")
 
     return parser.parse_args(args);
 
