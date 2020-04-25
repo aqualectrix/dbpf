@@ -38,7 +38,12 @@ def main(args):
     # General
     advanced = True,
     program_name = "SortIndexer",
-    show_restart_button = False
+    show_restart_button = False,
+
+    # Progress
+    progress_regex=r"^Processing: (?P<current>\d+)/(?P<total>\d+)$",
+    progress_expr="current / total * 100",
+    hide_progress_msg = True
 )
 def parse_args(args):
     parser = GooeyParser(description = "Sort any BodyShop content. Higher numbers come earlier in the catalog!")
