@@ -11,8 +11,9 @@ def sortindexFile(filename, suffix_map):
 
     if suffix not in suffix_map:
         warn("Suffix '" + suffix + "' was not found in your map. " + filename + " will not be sorted.")
+        return False
     else:
-        sortProcessWrapper.sortindexFile(filename, suffix_map[suffix])
+        return sortProcessWrapper.sortindexFile(filename, suffix_map[suffix])
 
 # Tests
 import unittest

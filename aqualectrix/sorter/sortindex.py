@@ -1,6 +1,7 @@
 import sortProcessWrapper
 import mapReader
 import mapSorter
+import os
 
 from gooey import Gooey
 from gooey import GooeyParser
@@ -8,14 +9,30 @@ from gooey import GooeyParser
 def main(args):
     args = parse_args(args)
 
+    sort_success = {}
+    total = len(args.Filenames)
+
+    print("Sorting...")
+
     if args.Index:
-        for f in args.Filenames:
-            sortProcessWrapper.sortindexFile(f, args.Index)
+        for n, f in enumerate(args.Filenames, start=1):
+            print("Processing: " + str(n) + "/" + str(total))
+            sort_success[f] = sortProcessWrapper.sortindexFile(f, args.Index)
 
     if args.Mapfile:
         suffix_map = mapReader.parseMapFile(args.Mapfile)
-        for f in args.Filenames:
-            mapSorter.sortindexFile(f, suffix_map)
+        for n, f in enumerate(args.Filenames, start=1):
+            print("Processing: " + str(n) + "/" + str(total))
+            sort_success[f] = mapSorter.sortindexFile(f, suffix_map)
+
+    if any(success for success in sort_success.values()):
+        print("Sorted:")
+        for f, s in filter(lambda item: item[1], sort_success.items()):
+            print(os.path.basename(f))
+    if any(not success for success in sort_success.values()):
+        print("Skipped:")
+        for f, s in filter(lambda item: not item[1], sort_success.items()):
+            print(os.path.basename(f))
 
 @Gooey(
     # General
