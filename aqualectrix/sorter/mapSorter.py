@@ -1,6 +1,11 @@
 import sortProcessWrapper
+import warnings
 
-from warnings import warn
+# Monkeypatch warnings.showwarning for user-friendly output
+# rather than dev-friendly output.
+def showSimpleWarning(message, category, filename, lineno, file=None, line=None):
+    print("WARNING: " + str(message))
+warnings.showwarning = showSimpleWarning
 
 def sortindexFile(filename, suffix_map):
     # Get suffix, the last set of characters before the file suffix
@@ -10,7 +15,7 @@ def sortindexFile(filename, suffix_map):
     suffix = filename.split("_")[-1].split(".")[0].casefold()
 
     if suffix not in suffix_map:
-        warn("Suffix '" + suffix + "' was not found in your map. " + filename + " will not be sorted.")
+        warnings.warn("Suffix '" + suffix + "' was not found in your map. " + filename + " will not be sorted.")
         return False
     else:
         return sortProcessWrapper.sortindexFile(filename, suffix_map[suffix])

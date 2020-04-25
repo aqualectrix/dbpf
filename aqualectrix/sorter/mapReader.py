@@ -1,4 +1,10 @@
-from warnings import warn
+import warnings
+
+# Monkeypatch warnings.showwarning for user-friendly output
+# rather than dev-friendly output.
+def showSimpleWarning(message, category, filename, lineno, file=None, line=None):
+    print("WARNING: " + str(message))
+warnings.showwarning = showSimpleWarning
 
 def parseMapFile(filename):
     with open(filename, 'r') as f:
@@ -23,10 +29,10 @@ def parseLines(lines):
 
         # provide helpful error messages
         if not parts or not parts[0]:
-            warn("Key name missing on line " + str(linenum) + ". Skipping this line.", stacklevel=2)
+            warnings.warn("Key name missing on line " + str(linenum) + ". Skipping this line.", stacklevel=2)
             continue
         if len(parts) < 2 or not parts[1]:
-            warn("Index missing on line " + str(linenum) + ". Skipping this line; " + parts[0] + " will not be sorted.", stacklevel=2)
+            warnings.warn("Index missing on line " + str(linenum) + ". Skipping this line; " + parts[0] + " will not be sorted.", stacklevel=2)
             continue
 
         name = parts[0]
@@ -39,7 +45,7 @@ def parseLines(lines):
         try:
             index = int(hexstring, 16)
         except ValueError:
-            warn("Invalid index " + hexstring + " on line " + str(linenum) + "Skipping this line; " + parts[0] + " will not be sorted.", stacklevel=2)
+            warnings.warn("Invalid index " + hexstring + " on line " + str(linenum) + "Skipping this line; " + parts[0] + " will not be sorted.", stacklevel=2)
             continue
 
         # add to map
