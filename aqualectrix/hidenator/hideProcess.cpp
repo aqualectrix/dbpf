@@ -13,7 +13,13 @@
 
 using namespace std;
 
-bool hideProcess(const char* skinfile, const char* hidefile, int namecount, const char* names[]) {
+bool hideProcess(const char* skinfile, const char* hidefile, vector<string> names) {
+  clog << "Will read from " << skinfile << " and write to " << hidefile <<
+          ", which will hide these things: " << endl;
+  for (auto & name : names) {
+    clog << name << endl;
+  }
+
   DBPFtype skinpackage;
   vector<DBPF_resourceType*> resources;
 
