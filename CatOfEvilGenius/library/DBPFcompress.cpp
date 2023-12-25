@@ -18,8 +18,6 @@
 
 #include "DBPF_byteStreamFunctions.h"
 
-using namespace std;
-
 // ================================================================================
 
 #define DBPF_COMPRESSION_QFS 0xFB10
@@ -67,8 +65,8 @@ bool dbpfGetCompressedHeader( const unsigned char * data,
 
 
 typedef unsigned char byte;
-extern byte * compress( const byte* src, const byte* srcend, byte* dst, byte* dstend, bool pad );
-extern bool decompress( const byte* src, int compressed_size, byte* dst, int uncompressed_size, bool truncate );
+extern ::byte * compress( const ::byte* src, const ::byte* srcend, ::byte* dst, ::byte* dstend, bool pad );
+extern bool decompress( const ::byte* src, int compressed_size, ::byte* dst, int uncompressed_size, bool truncate );
 
 
 /**
