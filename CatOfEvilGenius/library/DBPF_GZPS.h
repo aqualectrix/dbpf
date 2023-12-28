@@ -14,6 +14,7 @@ public:
   string getFamily() const;
 
   bool setFamily( string family );
+  bool setHairtone( string hairtone );
   bool setHairColor( int color );
 };
 

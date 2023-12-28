@@ -31,6 +31,19 @@ bool DBPF_GZPStype::setFamily( string family )
   return( this->setPropertyValue( "family", item ) );
 }
 
+/**
+  * Sets hairtone to an arbitrary string value. Use setHairColor() for an easier
+  * interface for standard hair colors.
+ **/
+bool DBPF_GZPStype::setHairtone(string hairtone)
+{
+  DBPF_CPFitemType item;
+  item.miType = CPF_STRING;
+  item.mstrValue.assign(hairtone);
+
+  return this->setPropertyValue("hairtone", item);
+}
+
 
 /**
  * Sets the following properties:
