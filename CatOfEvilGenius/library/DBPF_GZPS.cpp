@@ -16,7 +16,7 @@ unsigned int DBPF_GZPStype::getAge() const
 
 string DBPF_GZPStype::getFamily() const
 {
-  DPBF_CPFitemType item;
+  DBPF_CPFitemType item;
   if ( false == this->getPropertyValue( "family", item ) )
     return "";
   return item.mstrValue;
