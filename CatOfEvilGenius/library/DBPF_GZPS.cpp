@@ -14,6 +14,14 @@ unsigned int DBPF_GZPStype::getAge() const
   return item.miValue;
 }
 
+string DBPF_GZPStype::getFamily() const
+{
+  DPBF_CPFitemType item;
+  if ( false == this->getPropertyValue( "family", item ) )
+    return "";
+  return item.mstrValue;
+}
+
 
 bool DBPF_GZPStype::setFamily( string family )
 {

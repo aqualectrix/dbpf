@@ -11,6 +11,7 @@ public:
   ~DBPF_GZPStype() {}
 
   unsigned int getAge() const;
+  string getFamily() const;
 
   bool setFamily( string family );
   bool setHairColor( int color );
