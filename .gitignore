@@ -8,3 +8,5 @@
 **/build
 *.spec
 aqualectrix/seasonalizer/Example/*.zip
+*.vsidx
+*.sqlite
