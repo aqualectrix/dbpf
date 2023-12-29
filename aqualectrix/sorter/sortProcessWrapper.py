@@ -1,7 +1,10 @@
 import ctypes
+import os
 import pathlib
 
 # Load shared library into ctypes
+os.add_dll_directory("C:/msys64/ucrt64/bin")
+os.add_dll_directory(os.getcwd())
 c_lib = ctypes.CDLL("./libSortProcess.so")
 
 # Provide details about sortProcess

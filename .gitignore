@@ -10,3 +10,5 @@
 aqualectrix/seasonalizer/Example/*.zip
 *.vsidx
 *.sqlite
+.vs/VSWorkspaceState.json
+.vs/dbpf/v17/.wsuo
