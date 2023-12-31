@@ -17,13 +17,13 @@ def main(args):
     if args.Index:
         for n, f in enumerate(args.Filenames, start=1):
             print("Processing: " + str(n) + "/" + str(total))
-            sort_success[f] = sortProcessWrapper.sortindexFile(f, args.Index)
+            sort_success[f] = sortProcessWrapper.sortindexFile(f, args.Index, args.GeneticizeHairs)
 
     if args.Mapfile:
         suffix_map = mapReader.parseMapFile(args.Mapfile)
         for n, f in enumerate(args.Filenames, start=1):
             print("Processing: " + str(n) + "/" + str(total))
-            sort_success[f] = mapSorter.sortindexFile(f, suffix_map)
+            sort_success[f] = mapSorter.sortindexFile(f, suffix_map, args.GeneticizeHairs)
 
     printSummary(sort_success)
 
@@ -40,6 +40,8 @@ def main(args):
 )
 def parse_args(args):
     parser = GooeyParser(description = "Sort any BodyShop content. Higher numbers come earlier in the catalog!")
+
+    parser.add_argument("-g", "--GeneticizeHairs", action = "store_true", default = False, help = "For any files where the Property Set includes a hairtone, set the hairtone to a genetic value based on the sortindex.")
 
     indexGroup = parser.add_mutually_exclusive_group(required = True)
     indexGroup.add_argument("-i", "--Index", type=hex, help = "Value to apply to sortindex, in hex.")
