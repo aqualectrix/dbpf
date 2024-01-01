@@ -31,38 +31,48 @@ Jade : 49
 Pyrodex : 50
 SeaGreen : 50
 SeaNymph : 50
+Mint : 51
 Shockwave : 51
+Teal : 51
+TealOpal : 51
 
 # Blues
 Aeronautics : 55
 Hydrazine : 57
 Napalm : 58
+NapalmOmbre : 58
 Voyager : 58
 BlueOpal : 59
 LightBlue: 59
-LightBlueOmbre: 59
-Cannonball: 60
+LightBlueOmbre : 59
+Cannonball : 60
+CannonballShockwave : 60
 
 # Purples
 HMX : 62
 Hazardous : 63
+HazardousOmbre : 63
 MidnightBlue : 63
 Opal : 67
 SoftNebula : 67
 Fluorophore : 68
 BlastingAgent : 69
-Purple : 69
+SourGrapes : 69
 Detonator : 70
 DarkPurple : 70
+AsteroidBelt : 72
 Lilac : 72
+LilacOmbre : 72
 Toxicity : 75
+Toxicityish : 75
 
 # Pinks
 Combustible : 80
 DarkRedViolet : 80
 Afterburner : 85
-Orchid : 85
+LunaBase : 85
 Nebula : 87
 Powdercake : 89
+BrightPink : 95
 Pentolite : 95
-BubblegumPink : 95
+Pussycat : 95
