@@ -72,7 +72,7 @@ bool sortProcess(const char* filename, const int index, const bool geneticize_ha
         // Only set hairtone if it already exists.
         DBPF_CPFitemType item;
         if (((DBPF_GZPStype*)pResource)->getPropertyValue("hairtone", item)) {
-            clog << "\t" << "Found hairtone, setting to " + hairtone + "." << endl;
+            // clog << "\t" << "Found hairtone, setting to " + hairtone + "." << endl;
             ((DBPF_GZPStype*)pResource)->setHairtone(hairtone);
         }
     }
