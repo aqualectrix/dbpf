@@ -31,6 +31,8 @@ public:
   bool initFromByteStream( const DBPFindexType & entry, unsigned char * data, const unsigned int byteCountToRead );
   bool updateRawBytes();
 
+  bool getSubsetName( string & subsetName );
+
 #ifdef _DEBUG
   void dump( FILE * f ) const;
 #endif

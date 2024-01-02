@@ -45,6 +45,23 @@ void DBPF_TXMTtype::clear()
     this->mTextureNames.clear();
 }
 
+bool DBPF_TXMTtype::getSubsetName( string & subsetName )
+{
+    string texName;
+    if ( this->getPropertyValue( "stdMatBaseTextureName", texName ) )
+    {
+        // remove ##0xabcdef01! from the front
+        texName.erase( 0, 13 );
+        // remove ~stdMatBaseTextureName from the end
+        texName.erase( texName.length() - 22, texName.length() );
+
+        subsetName = texName;
+        return true;
+    }
+
+    return false;
+}
+
 
 #ifdef _DEBUG
 void DBPF_TXMTtype::dump( FILE * f ) const
