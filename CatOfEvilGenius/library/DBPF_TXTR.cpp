@@ -232,6 +232,18 @@ bool DBPF_TXTRtype::updateRawBytes()
   return true;
 }
 
+string DBPF_TXTRtype::getSubsetName() 
+{
+    string resourceName = this->getName();
+
+    // remove ##0xabcdef01! from the front
+    resourceName.erase( 0, 13 );
+    // remove ~stdMatBaseTextureName_txtr from the end
+    resourceName.erase( resourceName.length() - 27, resourceName.length());
+
+    return resourceName;
+}
+
 
 /**
 <pre>
