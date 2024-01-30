@@ -10,7 +10,7 @@ c_lib = ctypes.CDLL("./libtexRefProcess.so")
 # Provide details about texRefProcess
 # bool texRefProcess (const char* filename, const char* tex_id, const char* subset_to_replace)
 c_lib.texRefProcess.restype = ctypes.c_bool
-c_lib.texRefProcess.argtypes = [ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p];
+c_lib.texRefProcess.argtypes = [ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_bool];
 
-def texRefFile(filename, tex_id, subset_to_replace):
-    return c_lib.texRefProcess(filename.encode('utf-8'), tex_id, subset_to_replace.encode('utf-8'));
+def texRefFile(filename, tex_id, subset_to_replace, replace_bumpmap):
+    return c_lib.texRefProcess(filename.encode('utf-8'), tex_id, subset_to_replace.encode('utf-8'), replace_bumpmap);

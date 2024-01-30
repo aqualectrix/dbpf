@@ -11,6 +11,8 @@ def main(args):
     texref_success = {}
     ref_library = {}
 
+    print(args)
+
     if args.ReferenceFiles:
         print("Gathering Reference Data...")
 
@@ -25,7 +27,7 @@ def main(args):
 
         for n, f in enumerate(args.FilesToUseReferences, start = 1):
             print("Processing: " + str(n) + "/" + str(len(args.FilesToUseReferences)))
-            texref_success[f] = fileHandler.texRefFile(f, ref_library, args.subsetToReference)
+            texref_success[f] = fileHandler.texRefFile(f, ref_library, args.SubsetToReference, args.AlsoReferenceBumpmap)
 
         printSummary(texref_success)
 
@@ -46,7 +48,9 @@ def parse_args(args):
     parser.add_argument("-r", "--ReferenceFiles", help = "Files which hold the reference textures. These files will not be changed.", nargs = "*", widget = "MultiFileChooser")
     parser.add_argument("-f", "--FilesToUseReferences", help = "Files which will point to the reference textures. These files will be changed, and will then require their reference files to show up correctly in game.", nargs = "*", widget = "MultiFileChooser")
 
-    parser.add_argument("-s", "--subsetToReference", help = "The subset to texture reference (e.g. body, top, bottom, body_alpha, etc.")
+    parser.add_argument("-s", "--SubsetToReference", help = "The subset to texture reference (e.g. body, top, bottom, body_alpha, etc.")
+
+    parser.add_argument("-b", "--AlsoReferenceBumpmap", help = "Also replace the bumpmap, if there is one, with a reference.", action='store_true', gooey_options={'initial_value': True})
 
     return parser.parse_args(args);
 

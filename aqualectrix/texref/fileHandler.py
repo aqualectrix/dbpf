@@ -30,14 +30,14 @@ def addToRefMap(filename, suffix_map):
 
     return True
 
-def texRefFile(filename, suffix_map, subset_to_replace):
+def texRefFile(filename, suffix_map, subset_to_replace, replace_bumpmap):
     suffix = getSuffix(filename)
 
     if suffix not in suffix_map:
         warnings.warn("Suffix '" + suffix + "' was not found in your map. " + filename + " will not be processed.")
         return False
     else:
-        return texRefProcessWrapper.texRefFile(filename, suffix_map[suffix], subset_to_replace)
+        return texRefProcessWrapper.texRefFile(filename, suffix_map[suffix], subset_to_replace, replace_bumpmap)
 
 # Tests
 import unittest
