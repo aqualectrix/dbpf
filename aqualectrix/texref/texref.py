@@ -11,8 +11,6 @@ def main(args):
     texref_success = {}
     ref_library = {}
 
-    print(args)
-
     if args.ReferenceFiles:
         print("Gathering Reference Data...")
 
