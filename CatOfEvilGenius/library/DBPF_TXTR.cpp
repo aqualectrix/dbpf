@@ -232,14 +232,34 @@ bool DBPF_TXTRtype::updateRawBytes()
   return true;
 }
 
+string DBPF_TXTRtype::getTextureType() 
+{
+    string resourceName = this->getName();
+
+    // remove ##0xabcdef01! from the front
+    resourceName.erase( 0, 13 );
+    // remove TextureName_txtr from the end
+    resourceName.erase( resourceName.length() - 16, resourceName.length());
+
+    // remove subsetName~stdMat portion from the front (e.g. body~stdMat)
+    // find position of ~ which follows the subset name
+    int tilde_index = resourceName.find_first_of("~");
+    resourceName.erase( 0, tilde_index +  7 );
+
+    return resourceName;
+
+}
+
 string DBPF_TXTRtype::getSubsetName() 
 {
     string resourceName = this->getName();
 
     // remove ##0xabcdef01! from the front
     resourceName.erase( 0, 13 );
-    // remove ~stdMatBaseTextureName_txtr from the end
-    resourceName.erase( resourceName.length() - 27, resourceName.length());
+
+    // remove the ~ which follows the subset name, and everything after it
+    int tilde_index = resourceName.find_first_of("~");
+    resourceName.erase( tilde_index, resourceName.length());
 
     return resourceName;
 }

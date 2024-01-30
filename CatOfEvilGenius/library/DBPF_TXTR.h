@@ -20,6 +20,7 @@ public:
   bool initFromByteStream( const DBPFindexType & entry, unsigned char * data, const unsigned int byteCountToRead );
   bool updateRawBytes();
 
+  string getTextureType();
   string getSubsetName();
   bool isImageSameAs( const DBPF_TXTRtype * pOther ) const;
 
