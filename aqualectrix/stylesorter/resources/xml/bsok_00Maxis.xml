@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<bsok>
+	<genre name="Maxis">
+		<style name="">
+			<group name="Maxis Packs" gender="unisex">
+				<shape name="Maxis Original" icon="EA" creator="Maxis">
+					<role name="Custom Content" code ="0x0"/>
+					<role name="Base Game" code="0x1"/>
+					<role name="University" code="0x2"/>
+					<role name="Nightlife" code="0x3"/>
+					<role name="Open for Business" code ="0x4"/>
+					<role name="Family Fun Stuff" code="0x5"/>
+					<role name="Glamour Life" code="0x6"/>
+					<role name="Pets" code="0x7"/>
+					<role name="Seasons" code="0x8"/>
+					<role name="Celebration Stuff" code="0x9"/>
+					<role name="H&amp;M Stuff" code="0xa"/>
+					<role name="Bon Voyage" code="0xb"/>
+					<role name="Teen Style Stuff" code="0xc"/>
+					<role name="Free Time" code="0xe"/>
+					<role name="Kitchen &amp; Bath" code="0xf"/>
+					<role name="Apartment Life" code="0x11"/>
+				</shape>
+			</group>
+		</style>
+	</genre>
+</bsok>

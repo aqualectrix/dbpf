@@ -1,0 +1,66 @@
+<?xml version ="1.0"?>
+<ssc_color>
+	<group name="Colors">
+		<style name="Color Traits">
+			<order name="Alphabetical">
+				<color name="Black" code="0x10"/>
+				<color name="Blue" code="0x20"/>
+				<color name="Brown" code="0x30"/>
+				<color name="Green" code="0x40"/>
+				<color name="Grey" code="0x50"/>
+				<color name="Orange" code="0x60"/>
+				<color name="Pink" code="0x70"/>
+				<color name="Purple" code="0x80"/>
+				<color name="Red" code="0x90"/>
+				<color name="Turquoise" code="0xa0"/>
+				<color name="White" code="0xb0"/>
+				<color name="Yellow" code="0xc0"/>	
+			</order>
+			<order name="Rainbow">
+				<color name="White" code="0x10"/>
+				<color name="Grey" code="0x20"/>
+				<color name="Black" code="0x30"/>
+				<color name="Brown" code="0x40"/>
+				<color name="Red" code="0x50"/>
+				<color name="Orange" code="0x60"/>
+				<color name="Yellow" code="0x70"/>
+				<color name="Green" code="0x80"/>
+				<color name="Turquoise" code="0x90"/>
+				<color name="Blue" code="0xa0"/>
+				<color name="Purple" code="0xb0"/>
+				<color name="Pink" code="0xc0"/>
+			</order>
+		</style>
+		<style name="RYB 12-Color Wheel">
+			<order name="Rainbow">
+				<color name="White" code="0x05"/>
+				<color name="Grey" code="0x10"/>
+				<color name="Black" code="0x15"/>
+				<color name="Brown" code="0x20"/>
+				<color name="Red" code="0x30"/>
+				<color name="Red-Orange" code="0x40"/>
+				<color name="Orange" code="0x50"/>
+				<color name="Yellow-Orange" code="0x60"/>
+				<color name="Yellow" code="0x70"/>
+				<color name="Yellow-Green" code="0x80"/>
+				<color name="Green" code="0x90"/>
+				<color name="Blue-Green" code="0xa0"/>
+				<color name="Blue" code="0xb0"/>
+				<color name="Blue-Violet" code="0xc0"/>
+				<color name="Violet" code="0xd0"/>
+				<color name="Red-Violet" code="0xe0"/>
+			</order>
+		</style>
+	</group>
+	<group name="Palettes">
+		<style name="Color Palette Traits">
+			<order name="Stylish Seasonal CAS">
+				<palette name="Pure" code="0x10"/>
+				<palette name="Tint/Pastel" code="0x30"/>
+				<palette name="Tone/Muted" code="0x50"/>
+				<palette name="Shade/Dark" code="0x70"/>
+				<palette name="Neon" code="0x90"/>
+			</order>
+		</style>
+	</group>
+</ssc_color>
