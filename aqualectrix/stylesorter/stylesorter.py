@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 from bsokproduct import *
 from ssccolor import *
 from sscpalette import *
+import os.path
 
 # Define enum for resource types
 ResourceType = Enum('ResourceType', [("DBPF_BINX", 0x0C560F39), ("DBPF_GZPS", 0xEBCF3E27)])
@@ -29,6 +30,7 @@ def main(args):
 	if args.list:
 		for item in sorted(items.values()):
 			print(item.stringify(pretty = True, names_config = names_map))
+		return
 
 	if args.colors_update:
 		new_colors_map = {}
@@ -37,12 +39,30 @@ def main(args):
 		
 		for item in items.values():
 			bodyShopProcessWrapper.updateBodyShopItem(item, color_map = old_new_map)
+		return
+
+	if args.namesync:
+		# Create a name:id color map
+		names_map["Color Names"] = {color_name:color_id for color_id, color_name in names_map["Colors"].items()}
+
+		filenames = []
+		for path in args.filenames:
+			filenames += glob.glob(path, recursive = args.recursive)
+
+		for filename in filenames:
+			if not check_valid_namesync_filename(filename, args.namesync[0]):
+				continue
+
+			print("Namesyncing", filename)
+			bodyShopProcessWrapper.namesync(filename, names_map, args.namesync[1], args.namesync[2])
 
 def parse_args(args):
 	parser = argparse.ArgumentParser(prog = "Style Sorter", description = "Sort outfits by style, color, and color palette.")
 
 	parser.add_argument("-l", "--list", action = "store_true", default = False, help = "List selected files in the order they will appear in CAS.")
+
 	parser.add_argument("-c", "--colors_update", nargs=3, metavar =("COLORS_FILE", "COLOR_STYLE", "COLOR_ORDER"), help = "Given an xml file with color definitions, a color style, and color ordering (defined in that file), change the selected files to use the given style and ordering. Colors are matched by name; unmatched colors will not be updated.")
+	parser.add_argument('-n', "--namesync", nargs=3, metavar = ("CREATOR_SETNAME", "PRODUCT_ID", "MESHNAME"), help = "For each given file with the prefix CREATOR_SETNAME, edit internal resources and fields to be based on the name of the file (CREATOR_SETNAME_COLOR.package) and the given product id and meshname.")
 
 	parser.add_argument("-r", "--recursive", action = "store_true", default = False, help = "Recurse into any folders found in the list of selected files.")
 
@@ -224,6 +244,27 @@ def produce_old_to_new_map(key, old_names_map, new_names_map):
 
 	return { old_num:new_num for old_num, old_name in old_map.items() for new_num, new_name in new_map.items() if old_name == new_name }
 
+def check_valid_namesync_filename(filename, prefix):
+	basename = os.path.basename(filename)
+	nameparts = basename.split("_")
+
+	# Names without at least 2 parts cannot match the prefix; they are invalid
+	if not len(nameparts) >= 2:
+		#print(basename, "is too short.")
+		return False
+
+	# Names that don't match the prefix are invalid
+	if not prefix == "_".join(nameparts[:2]):
+		#print(basename, "doesn't match the prefix", prefix)
+		return False
+
+	# Names that match the prefix but don't have exactly 3 parts are invalid;
+	# moreover, that's probably not what the user expected, so print a warning.
+	if not len(nameparts) == 3:
+		print("WARNING:", filename, " matches the prefix but is not formatted as Creator_Setname_Color.package. It will not be processed.")
+		return False
+
+	return True
 
 if __name__ == '__main__':
 	import sys

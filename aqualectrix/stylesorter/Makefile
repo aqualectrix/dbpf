@@ -15,7 +15,8 @@ shared_bodyShopProcess.o: bodyShopProcess.cpp \
 	../../CatOfEvilGenius/library/DBPF_types.h \
 	../../CatOfEvilGenius/library/DBPF_BINX.h \
 	../../CatOfEvilGenius/library/DBPF_CPF.h \
-	../../CatOfEvilGenius/library/DBPF_GZPS.h
+	../../CatOfEvilGenius/library/DBPF_GZPS.h \
+	../../CatOfEvilGenius/library/DBPF_STR.h
 	g++ -c -fPIC -o shared_bodyShopProcess.o bodyShopProcess.cpp
 
 .PHONY: clean

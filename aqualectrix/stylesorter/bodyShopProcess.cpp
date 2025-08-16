@@ -12,6 +12,26 @@
 #include "../../CatOfEvilGenius/library/DBPF_BINX.h"
 #include "../../CatOfEvilGenius/library/DBPF_CPF.h"
 #include "../../CatOfEvilGenius/library/DBPF_GZPS.h"
+#include "../../CatOfEvilGenius/library/DBPF_STR.h"
+
+// Helper function, not exported to shared library for use in Python
+int getColorFromSortindex(int sortindex) {
+	// Color lives in hexits yy of 0x0000yy00
+	return (sortindex % (16*16*16*16)) / (16*16);
+}
+
+// Helper function, not exported to shared library for use in Python
+int getColorlessSortindex(int sortindex) {
+	int color = getColorFromSortindex(sortindex);
+	int colorless_sortindex = sortindex - (color * 16*16);
+
+	return colorless_sortindex;
+}
+
+// Helper function, not exported to shared library for use in Python
+int addColorToSortindex(int colorless_sortindex, int color) {
+	return colorless_sortindex + (color * 16*16);
+}
 
 struct resourceInfo {
 	unsigned int group;
@@ -137,6 +157,18 @@ resourceInfo* readProcess(const char* filename, int* infos_length) {
 	  }
   }
 
+  // Clean up
+  if (!resources.empty()) {
+    size_t vec_size = resources.size();
+    for (size_t i = 0; i < vec_size; i++) {
+      if (resources[i] != NULL) {
+        delete resources[i];
+        resources[i] = NULL;
+      }
+      resources.clear();
+    }
+  }
+
   return infos;
 }
 
@@ -183,8 +215,8 @@ bool updateItemProcess(const char* filename, const int group, const int instance
 			int new_sortindex = old_sortindex;
 
 			// Calculate current color value, which is in hexits 0x0000yy00
-			int old_color = (old_sortindex % (16*16*16*16)) / (16*16);
-			int colorless_sortindex = old_sortindex - (old_color * 16*16);
+			int old_color = getColorFromSortindex(old_sortindex);
+			int colorless_sortindex = getColorlessSortindex(old_sortindex);
 
 			//clog << "Sortindex was: " << old_sortindex << endl;
 			//clog << "Old color was: " << old_color << endl;
@@ -193,14 +225,14 @@ bool updateItemProcess(const char* filename, const int group, const int instance
 			// Update desired sortindex value if the old color can be found in the map
 			for (int j = 0; j < color_map_length; j++) {
 				if(color_map[j].old_val == old_color) {
-					new_sortindex = colorless_sortindex + (color_map[j].new_val * 16*16);
+					new_sortindex = addColorToSortindex(colorless_sortindex, color_map[j].new_val);
 
 					//clog << "Found old color " << color_map[j].old_val << " in map. New color is " << color_map[j].new_val << endl;
 					//clog << "New sortindex is: " << new_sortindex << endl;
 				}
 			}
 
-			// Update actual sortindex value if there's an update to be made
+			// Update actual sortindex value
 			if(new_sortindex != old_sortindex) {
 				sortindex.miValue = new_sortindex;
 				pResource->setPropertyValue("sortindex", sortindex);
@@ -233,6 +265,109 @@ bool updateItemProcess(const char* filename, const int group, const int instance
 	}
 
 	return file_updated && write_success;
+}
+
+extern "C" // for exporting to shared library for use in Python
+bool namesyncProcess(const char* filename, const char* creator, const char* setname, const char* colorname, const char* meshname, const char* color_lowercase, const unsigned int product_id, const int color_id) {
+
+	DBPFtype package;
+	vector<DBPF_resourceType*> resources;
+
+	// Types that should be decompressed and loaded when opening the file.
+	vector<unsigned int> typesToInit;
+	typesToInit.push_back(DBPF_BINX);
+	typesToInit.push_back(DBPF_GZPS);
+	typesToInit.push_back(DBPF_STR);
+	typesToInit.push_back(DBPF_TXMT);
+	
+	// Open package file and read/populate chosen (typesToInit) resources.
+	if(!readPackage(filename, package, typesToInit, resources)) {
+		cerr << "Opening and reading from " << filename << " failed. Namesyncing aborted." << endl;
+		return false;
+	}
+
+  int item_count = resources.size();
+  DBPF_resourceType* pResource = NULL;
+
+  for (int i = 0; i < item_count; i++) {
+	  pResource = resources[i];
+
+	  if (NULL == pResource) {
+		  continue;
+	  }
+
+	  if (DBPF_STR == pResource->getType()) {
+		  int text_count = ((DBPF_STRtype*)pResource)->getTextItemCount();
+		  
+		  // Add or assign the first text item to be creator_setname_colorname.
+		  DBPF_textType tooltip;
+		  tooltip.mLanguageCode = static_cast<char>(1); // English
+		  tooltip.mstrValueText = creator + string("_") + setname + string("_") + colorname;
+
+		  if (text_count < 1) {
+			  ((DBPF_STRtype*)pResource)->addTextItem(tooltip);
+		  }
+		  else {
+			  ((DBPF_STRtype*)pResource)->setTextItem(0, tooltip);
+		  }
+	  }
+
+	  if (DBPF_GZPS == pResource->getType()) {
+		  // Set product to product_id
+		  DBPF_CPFitemType product;
+		  product.miType = CPF_INT;
+		  product.miValue = product_id;
+		  ((DBPF_GZPStype*)pResource)->setPropertyValue("product", product);
+
+		  // Set creator to "00000000-0000-0000-0000-000000000000" to enable custom product id
+		  // to influence sorting.
+		  DBPF_CPFitemType creator_key;
+		  creator_key.miType = CPF_STRING;
+		  creator_key.mstrValue = "00000000-0000-0000-0000-000000000000";
+		  ((DBPF_GZPStype*)pResource)->setPropertyValue("creator", creator_key);
+
+		  // Set name to meshname_lowercasecolorname
+		  DBPF_CPFitemType name;
+		  name.miType = CPF_STRING;
+		  name.mstrValue = meshname + string("_") + color_lowercase;
+		  ((DBPF_GZPStype*)pResource)->setPropertyValue("name", name);
+	  }
+
+	  if (DBPF_BINX == pResource->getType()) {		  
+		  // Set sortindex with new color
+		  int new_sortindex = addColorToSortindex(0, color_id);
+		  DBPF_CPFitemType sortindex;
+		  sortindex.miType = CPF_INT2;
+		  sortindex.miValue = new_sortindex;
+		  ((DBPF_BINXtype*)pResource)->setPropertyValue("sortindex", sortindex);
+	  }
+
+	  if (DBPF_TXMT == pResource->getType()) {
+
+	  }
+  }
+
+  // Write back to file
+  bool write_success = writeCompressedPackage(filename, package, resources);
+  if (!write_success) {
+    cerr << "Writing to file " << filename << " failed. File may be corrupted... " <<
+            "or you may have the file open somewhere else (SimPE, maybe?). " <<
+            "If so, close the file elsewhere and try again." << endl;
+  }
+
+    // Clean up
+  if (!resources.empty()) {
+    size_t vec_size = resources.size();
+    for (size_t i = 0; i < vec_size; i++) {
+      if (resources[i] != NULL) {
+        delete resources[i];
+        resources[i] = NULL;
+      }
+      resources.clear();
+    }
+  }
+
+  return write_success;
 }
 
 extern "C" // for exporting to shared library for use in Python

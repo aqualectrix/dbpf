@@ -58,6 +58,28 @@ def updateBodyShopItem(item, color_map):
 
 	print(success)
 
+# Provide details about namesyncProcess
+# bool namesyncProcess(const char* filename, const char* creator, const char* setname, const char* colorname, const char* meshname, const char* color_lowercase, const int product_id, const int color_id)
+c_lib.namesyncProcess.restype = ctypes.c_bool
+c_lib.namesyncProcess.argtypes = [ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_uint, ctypes.c_int]
+
+def namesync(filename, names_map, product, meshname):
+	basename = os.path.basename(filename)
+	nameparts = basename.split("_") # earlier validated to have exactly 3 parts
+	creator = nameparts[0]
+	setname = nameparts[1]
+
+	# Remove the extension from the name of the color
+	color = os.path.splitext(nameparts[2])[0]
+
+	product_id = int(product, 16)
+	
+	color_id = 0
+	if color.capitalize() in names_map["Color Names"]:
+		color_id = names_map["Color Names"][color.capitalize()]
+
+	success = c_lib.namesyncProcess(filename.encode("utf-8"), creator.encode("utf-8"), setname.encode("utf-8"), color.encode("utf-8"), meshname.encode("utf-8"), color.lower().encode("utf-8"), product_id, color_id)
+
 # Provide details about freeResourceInfos
 # void freeResourceInfos(resourceInfo* infos)
 c_lib.freeResourceInfos.restype = None
