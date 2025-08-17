@@ -268,7 +268,7 @@ bool updateItemProcess(const char* filename, const int group, const int instance
 }
 
 extern "C" // for exporting to shared library for use in Python
-bool namesyncProcess(const char* filename, const char* creator, const char* setname, const char* colorname, const char* meshname, const char* color_lowercase, const unsigned int product_id, const int color_id) {
+bool namesyncProcess(const char* filename, const char* creator, const char* setname, const char* colorname, const char* meshname, const char* color_lowercase, const unsigned int product_id, const int sortindex) {
 
 	DBPFtype package;
 	vector<DBPF_resourceType*> resources;
@@ -334,12 +334,11 @@ bool namesyncProcess(const char* filename, const char* creator, const char* setn
 	  }
 
 	  if (DBPF_BINX == pResource->getType()) {		  
-		  // Set sortindex with new color
-		  int new_sortindex = addColorToSortindex(0, color_id);
-		  DBPF_CPFitemType sortindex;
-		  sortindex.miType = CPF_INT2;
-		  sortindex.miValue = new_sortindex;
-		  ((DBPF_BINXtype*)pResource)->setPropertyValue("sortindex", sortindex);
+		  // Set sortindex with new color and palette
+		  DBPF_CPFitemType sortindex_item;
+		  sortindex_item.miType = CPF_INT2;
+		  sortindex_item.miValue = sortindex;
+		  ((DBPF_BINXtype*)pResource)->setPropertyValue("sortindex", sortindex_item);
 	  }
 
 	  if (DBPF_TXMT == pResource->getType()) {

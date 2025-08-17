@@ -63,7 +63,7 @@ def updateBodyShopItem(item, color_map):
 c_lib.namesyncProcess.restype = ctypes.c_bool
 c_lib.namesyncProcess.argtypes = [ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_uint, ctypes.c_int]
 
-def namesync(filename, names_map, product, meshname):
+def namesync(filename, namesync_indices, product, meshname):
 	basename = os.path.basename(filename)
 	nameparts = basename.split("_") # earlier validated to have exactly 3 parts
 	creator = nameparts[0]
@@ -74,11 +74,11 @@ def namesync(filename, names_map, product, meshname):
 
 	product_id = int(product, 16)
 	
-	color_id = 0
-	if color.capitalize() in names_map["Color Names"]:
-		color_id = names_map["Color Names"][color.capitalize()]
+	sortindex = 0
+	if color.capitalize() in namesync_indices:
+		sortindex = namesync_indices[color.capitalize()]
 
-	success = c_lib.namesyncProcess(filename.encode("utf-8"), creator.encode("utf-8"), setname.encode("utf-8"), color.encode("utf-8"), meshname.encode("utf-8"), color.lower().encode("utf-8"), product_id, color_id)
+	success = c_lib.namesyncProcess(filename.encode("utf-8"), creator.encode("utf-8"), setname.encode("utf-8"), color.encode("utf-8"), meshname.encode("utf-8"), color.lower().encode("utf-8"), product_id, sortindex)
 
 # Provide details about freeResourceInfos
 # void freeResourceInfos(resourceInfo* infos)

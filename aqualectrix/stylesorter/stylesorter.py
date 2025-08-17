@@ -42,8 +42,8 @@ def main(args):
 		return
 
 	if args.namesync:
-		# Create a name:id color map
-		names_map["Color Names"] = {color_name:color_id for color_id, color_name in names_map["Colors"].items()}
+		namesync_indices = {}
+		load_namesync_indices(files_config["Namesync Files"], namesync_indices)
 
 		filenames = []
 		for path in args.filenames:
@@ -54,7 +54,7 @@ def main(args):
 				continue
 
 			print("Namesyncing", filename)
-			bodyShopProcessWrapper.namesync(filename, names_map, args.namesync[1], args.namesync[2])
+			bodyShopProcessWrapper.namesync(filename, namesync_indices, args.namesync[1], args.namesync[2])
 
 def parse_args(args):
 	parser = argparse.ArgumentParser(prog = "Style Sorter", description = "Sort outfits by style, color, and color palette.")
@@ -235,6 +235,27 @@ def load_ssc(ssc_files_config, names_map):
 	for spec in ssc_palettes:
 		if spec.style == preferred_palette_style and spec.order == preferred_palette_order:
 			names_map["Color Palettes"][spec.palette.code] = spec.palette.name
+
+def load_namesync_indices(namesync_files_config, namesync_indices):
+	for file in namesync_files_config["xml_filepath"].split(";"):
+		tree = ET.parse(file)
+		ssc_color = tree.getroot()
+		for group in ssc_color:
+			if group.attrib["name"] == "Combined":
+				for style in group:
+					if style.attrib["name"] == namesync_files_config["combined_style"]:
+						for order in style:
+							if order.attrib["name"] == namesync_files_config["combined_order"]:
+								for child in order:
+									if child.tag == "color":
+										namesync_indices[child.attrib["name"]] = int(child.attrib["code"], 16)
+									elif child.tag == "synonyms":
+										code = int(child.attrib["code"], 16)
+										for color in child:
+											namesync_indices[color.attrib["name"]] = code
+
+	print(namesync_indices)
+					
 
 def produce_old_to_new_map(key, old_names_map, new_names_map):
 	# We turn two number:name maps into one number:number map

@@ -38,17 +38,17 @@
 				<color name="Black" code="0x15"/>
 				<color name="Brown" code="0x20"/>
 				<color name="Red" code="0x30"/>
-				<color name="Red-Orange" code="0x40"/>
+				<color name="RedOrange" code="0x40"/>
 				<color name="Orange" code="0x50"/>
-				<color name="Yellow-Orange" code="0x60"/>
+				<color name="YellowOrange" code="0x60"/>
 				<color name="Yellow" code="0x70"/>
-				<color name="Yellow-Green" code="0x80"/>
+				<color name="YellowGreen" code="0x80"/>
 				<color name="Green" code="0x90"/>
-				<color name="Blue-Green" code="0xa0"/>
+				<color name="BlueGreen" code="0xa0"/>
 				<color name="Blue" code="0xb0"/>
-				<color name="Blue-Violet" code="0xc0"/>
+				<color name="BlueViolet" code="0xc0"/>
 				<color name="Violet" code="0xd0"/>
-				<color name="Red-Violet" code="0xe0"/>
+				<color name="RedViolet" code="0xe0"/>
 			</order>
 		</style>
 	</group>

@@ -1,0 +1,39 @@
+<?xml version ="1.0"?>
+<ssc_color>
+	<group name="Combined">
+		<style name="RYB 12-Color Wheel">
+			<order name="Rainbow">
+				<!-- Basics -->
+				<color name="White" code="0x0510"/>
+				<color name="Grey"  code="0x1010"/>
+				<color name="Gray" code="0x1010"/>
+				<color name="Black" code="0x1510"/>
+				<color name="Brown" code="0x2010"/>
+				<color name="Red" code="0x3010" />
+				<color name="RedOrange" code="0x4010"/>
+				<color name="Orange" code="0x5010"/>
+				<color name="YellowOrange" code="0x6010"/>
+				<color name="Yellow" code="0x7010"/>
+				<color name="YellowGreen" code="0x8010"/>
+				<color name="Green" code="0x9010"/>
+				<color name="BlueGreen" code="0xa010"/>
+				<color name="Blue" code="0xb010"/>
+				<color name="BlueViolet" code="0xc010"/>
+				<color name="Violet" code="0xd010"/>
+				<color name="RedViolet" code="0xe010"/>
+
+				<!-- Blacks -->
+				<synonyms name="Black" code="0x1510">
+					<color name="BlackDragon"/>
+					<color name="BlackZip"/>
+				</synonyms>
+				
+				<!-- Blues -->
+				<synonyms name="Blue" code="0xb10">
+					<color name="Denim"/>
+					<color name="DenimRipped"/>
+				</synonyms>
+			</order>
+		</style>
+	</group>
+</ssc_color>
