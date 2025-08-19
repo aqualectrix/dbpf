@@ -89,9 +89,24 @@
 					<color name="DenimRipped"/>
 				</synonyms>
 				
+				<!-- Blue Tints -->
+				<synonyms name="Blue Tint" code="0xb030">
+					<color name="SkyBlue"/>
+				</synonyms>
+				
+				<!-- Blue Tones -->
+				<synonyms name="Blue Tone" code="0xb050">
+					<color name="SlateBlue"/>
+				</synonyms>
+				
 				<!-- BlueViolets -->
 				<synonyms name="BlueViolet" code="0xc010">
 					<color name="BlueLime"/>
+				</synonyms>
+				
+				<!-- Violets -->
+				<synonyms name="Violet" code="0xd010">
+					<color name="Purple"/>
 				</synonyms>
 				
 				<!-- Violet Shades -->
