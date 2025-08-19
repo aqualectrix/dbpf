@@ -25,7 +25,7 @@ def main(args):
 
         for n, f in enumerate(args.FilesToUseReferences, start = 1):
             print("Processing: " + str(n) + "/" + str(len(args.FilesToUseReferences)))
-            texref_success[f] = fileHandler.texRefFile(f, ref_library, args.SubsetToReference, args.AlsoReferenceBumpmap)
+            texref_success[f] = fileHandler.texRefFile(f, ref_library, args.SubsetToReference, args.ReferenceBaseTexture, args.ReferenceNormalMap)
 
         printSummary(texref_success)
 
@@ -48,7 +48,9 @@ def parse_args(args):
 
     parser.add_argument("-s", "--SubsetToReference", help = "The subset to texture reference (e.g. body, top, bottom, body_alpha, etc.")
 
-    parser.add_argument("-b", "--AlsoReferenceBumpmap", help = "Also replace the bumpmap, if there is one, with a reference.", action='store_true', gooey_options={'initial_value': True})
+    parser.add_argument("-t", "--ReferenceBaseTexture", help = "Replace the subset's base texture with a reference.", action='store_true', gooey_options={'initial_value': True})
+
+    parser.add_argument("-n", "--ReferenceNormalMap", help = "Replace the subset's normalmap/bumpmap, if there is one, with a reference.", action='store_true', gooey_options={'initial_value': True})
 
     return parser.parse_args(args);
 

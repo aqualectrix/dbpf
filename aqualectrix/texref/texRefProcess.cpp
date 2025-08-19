@@ -46,7 +46,7 @@ void removeNullResources( vector< DBPF_resourceType * > & resources )
 }
 
 extern "C" // for exporting to shared library for use in Python
-bool texRefProcess(const char* filename, const char* texId, const char* subsetToReplace, bool replaceBumpmap) {
+bool texRefProcess(const char* filename, const char* texId, const char* subsetToReplace, bool replaceTexture, bool replaceBumpmap) {
   clog << "Texture referencing " << filename << " to the " << texId << " reference." << endl;
 
   DBPFtype package;
@@ -81,18 +81,22 @@ bool texRefProcess(const char* filename, const char* texId, const char* subsetTo
           clog << "\t" << "Found subset " << subsetName << " in TXMT." << endl;
 
           if (0 == subsetName.compare(subsetToReplace)) {
-              // Replace "Base" texture
-              clog << "\t\t" << "Replacing with " << texId << "." << endl;
               string texIdStr = texId;
-              string referencedTextureName = "##0x" + texIdStr + "!" + subsetName + "~stdMatBaseTextureName";
-              clog << "\t\t" << "New value is " << referencedTextureName << endl;
-              ((DBPF_TXMTtype*)pResource)->setPropertyValue("stdMatBaseTextureName", referencedTextureName);
+
+              // If we should replace the "Base" texture, do so.
+              if(replaceTexture)
+              {
+                  clog << "\t\t" << "Replacing with " << texId << "." << endl;
+                  string referencedTextureName = "##0x" + texIdStr + "!" + subsetName + "~stdMatBaseTextureName";
+                  clog << "\t\t" << "New value is " << referencedTextureName << endl;
+                  ((DBPF_TXMTtype*)pResource)->setPropertyValue("stdMatBaseTextureName", referencedTextureName);
+              }
 
               // If bumpmap exists and we should replace it, do so
               if (replaceBumpmap) {
                   string bumpmapName;
                   if (((DBPF_TXMTtype*)pResource)->getPropertyValue("stdMatNormalMapTextureName", bumpmapName)) {          
-                      clog << "\t\t" << "Bumpmap exists, replacing it too." << endl;
+                      clog << "\t\t" << "Bumpmap exists, replacing it." << endl;
                       string referencedBumpMapTextureName = "##0x" + texIdStr + "!" + subsetName + "~stdMatNormalMapTextureName";
                       clog << "\t\t" << "New value is " << referencedBumpMapTextureName << endl;
                       ((DBPF_TXMTtype*)pResource)->setPropertyValue("stdMatNormalMapTextureName", referencedBumpMapTextureName);
@@ -113,7 +117,7 @@ bool texRefProcess(const char* filename, const char* texId, const char* subsetTo
         if (0 == subsetName.compare(subsetToReplace)) {
             string textureType = ((DBPF_TXTRtype*)pResource)->getTextureType();
 
-            if (0 == textureType.compare("Base") || ( replaceBumpmap && 0 == textureType.compare("NormalMap") )) {
+            if (replaceTexture && 0 == textureType.compare("Base") || ( replaceBumpmap && 0 == textureType.compare("NormalMap") )) {
                 clog << "\t\t" << "Found stdMat" << textureType << "TextureName TXTR with subset " << subsetName << ", which will no longer be needed once the corresponding TXMT is texture referenced. Nulling the TXTR." << endl;
                 delete pResource;
                 pResource = NULL;

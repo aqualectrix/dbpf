@@ -30,14 +30,21 @@ def addToRefMap(filename, suffix_map):
 
     return True
 
-def texRefFile(filename, suffix_map, subset_to_replace, replace_bumpmap):
+def texRefFile(filename, suffix_map, subset_to_replace, replace_texture, replace_bumpmap):
     suffix = getSuffix(filename)
 
-    if suffix not in suffix_map:
+    if replace_texture and suffix not in suffix_map:
         warnings.warn("Suffix '" + suffix + "' was not found in your map. " + filename + " will not be processed.")
         return False
-    else:
-        return texRefProcessWrapper.texRefFile(filename, suffix_map[suffix], subset_to_replace, replace_bumpmap)
+
+    # If we're only replacing the normal/bumpmap texture, we only need a single donor.
+    texID = list(suffix_map.values())[0]
+    # But if we're replacing the base texture, we need to use the donor
+    # with the matching file suffix.
+    if replace_texture:
+        texID = suffix_map[suffix]
+
+    return texRefProcessWrapper.texRefFile(filename, texID, subset_to_replace, replace_texture, replace_bumpmap)
 
 # Tests
 import unittest
