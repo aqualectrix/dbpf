@@ -333,10 +333,14 @@ bool namesyncProcess(const char* filename, const char* creator, const char* setn
 		  ((DBPF_GZPStype*)pResource)->setPropertyValue("name", name);
 	  }
 
-	  if (DBPF_BINX == pResource->getType()) {		  
-		  // Set sortindex with new color and palette
+	  if (DBPF_BINX == pResource->getType()) {		
+		  // Some older files use unsigned int (CPF_INT) instead of int (CPF_INT2)
+		  // for the sortindex property. So before we set it, we have to get it to
+		  // have a CPF item of the right type.
 		  DBPF_CPFitemType sortindex_item;
-		  sortindex_item.miType = CPF_INT2;
+		  ((DBPF_BINXtype*)pResource)->getPropertyValue("sortindex", sortindex_item);
+
+		  // Set sortindex with new color and palette
 		  sortindex_item.miValue = sortindex;
 		  ((DBPF_BINXtype*)pResource)->setPropertyValue("sortindex", sortindex_item);
 	  }
