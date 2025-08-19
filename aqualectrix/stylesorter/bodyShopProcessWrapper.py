@@ -75,8 +75,8 @@ def namesync(filename, namesync_indices, product, meshname):
 	product_id = int(product, 16)
 	
 	sortindex = 0
-	if color.capitalize() in namesync_indices:
-		sortindex = namesync_indices[color.capitalize()]
+	if color in namesync_indices:
+		sortindex = namesync_indices[color]
 
 	success = c_lib.namesyncProcess(filename.encode("utf-8"), creator.encode("utf-8"), setname.encode("utf-8"), color.encode("utf-8"), meshname.encode("utf-8"), color.lower().encode("utf-8"), product_id, sortindex)
 

@@ -253,8 +253,6 @@ def load_namesync_indices(namesync_files_config, namesync_indices):
 										code = int(child.attrib["code"], 16)
 										for color in child:
 											namesync_indices[color.attrib["name"]] = code
-
-	print(namesync_indices)
 					
 
 def produce_old_to_new_map(key, old_names_map, new_names_map):
