@@ -10,70 +10,94 @@ from ssccolor import *
 from sscpalette import *
 import os.path
 
+from gooey import Gooey
+from gooey import GooeyParser
+
 # Define enum for resource types
 ResourceType = Enum('ResourceType', [("DBPF_BINX", 0x0C560F39), ("DBPF_GZPS", 0xEBCF3E27)])
 
 def main(args):
-	args = parse_args(args)
-
-	# Load items from selected files
-	items = load_items(args.filenames, args.recursive)
-
 	# Load config files
 	names_map = {}
-
 	files_config = configparser.ConfigParser()
 	files_config.read("config.ini")
 	load_bsok(files_config["BSOK Files"], names_map)
 	load_ssc(files_config["Color Files"], names_map)
 
-	if args.list:
+	args = parse_args(args, names_map)
+
+	# Load items from selected files
+	items = load_items(args.filenames)
+
+	if args.command == "list":
 		for item in sorted(items.values()):
 			print(item.stringify(pretty = True, names_config = names_map))
 		return
 
-	if args.colors_update:
+	if args.command == "namesync":
+		namesync_indices = {}
+		load_namesync_indices(files_config["Namesync Files"], namesync_indices)
+
+		filenames = []
+		for path in args.filenames:
+			filenames += glob.glob(path)
+
+		for filename in filenames:
+			if not check_valid_namesync_filename(filename, args.prefix):
+				continue
+
+			print("Namesyncing", filename)
+			bodyShopProcessWrapper.namesync(filename, namesync_indices, [code for code, name in names_map["BSOK Products"].items() if name == args.product][0], args.meshname)
+
+	if args.command == "remap_colors":
 		new_colors_map = {}
-		load_ssc({"xml_filepath": args.colors_update[0], "color_style": args.colors_update[1], "color_order": args.colors_update[2]}, new_colors_map)
+		load_ssc({"xml_filepath": args.colors_file, "color_style": args.color_style, "color_order": args.color_order}, new_colors_map)
 		old_new_map = produce_old_to_new_map("Colors", names_map, new_colors_map)
 		
 		for item in items.values():
 			bodyShopProcessWrapper.updateBodyShopItem(item, color_map = old_new_map)
 		return
 
-	if args.namesync:
-		namesync_indices = {}
-		load_namesync_indices(files_config["Namesync Files"], namesync_indices)
+@Gooey(
+	# General
+	advanced = True,
+	program_name = "Style Sorter"
+)
+def parse_args(args, names_map):
+	parser = GooeyParser(description = "Sort outfits by style, color, and color palette.")
 
-		filenames = []
-		for path in args.filenames:
-			filenames += glob.glob(path, recursive = args.recursive)
+	subparsers = parser.add_subparsers(required=True)
 
-		for filename in filenames:
-			if not check_valid_namesync_filename(filename, args.namesync[0]):
-				continue
+	listing_parser = subparsers.add_parser("list", help= "List selected files in the order they will appear in CAS.")
+	listing_parser.set_defaults(command = "list")
+	listing_parser.add_argument("filenames", help="File(s) to process", nargs = "*", widget="MultiFileChooser")
 
-			print("Namesyncing", filename)
-			bodyShopProcessWrapper.namesync(filename, namesync_indices, args.namesync[1], args.namesync[2])
+	namesync_parser = subparsers.add_parser("namesync", help= "Sync information from file names to file contents.")
+	namesync_parser.set_defaults(command = "namesync")
+	namesync_parser.add_argument("filenames", help="File(s) to process", nargs = "*", widget="MultiFileChooser")
+	namesync_parser.add_argument("prefix", help = "The prefix of the files you want to namesync, in the form CREATOR_SETNAME.")
+	namesync_parser.add_argument("product", help = "The product / BSOK to give the namesync'd files.", choices = [name for name in names_map["BSOK Products"].values()])
+	namesync_parser.add_argument("meshname", help= "The meshname you want to use. This is purely cosmetic and will not change the reference to the actual mesh. Typically something like 'aftopmomshirt'.")
 
-def parse_args(args):
-	parser = argparse.ArgumentParser(prog = "Style Sorter", description = "Sort outfits by style, color, and color palette.")
+	remap_colors_parser = subparsers.add_parser("remap_colors", help="Given new color definitions, change the selected files to use them instead of the default color definitions.")
+	remap_colors_parser.set_defaults(command = "remap_colors")
+	remap_colors_parser.add_argument("filenames", help="File(s) to process", nargs = "*", widget="MultiFileChooser")
+	remap_colors_parser.add_argument("colors_file", help="An XML file with color definitions.")
+	remap_colors_parser.add_argument("color_style", help="A color style defined within the XML file.")
+	remap_colors_parser.add_argument("color_order", help="A color ordering defined within the style in the XML file.")
 
-	parser.add_argument("-l", "--list", action = "store_true", default = False, help = "List selected files in the order they will appear in CAS.")
+	#parser.add_argument("-l", "--list", action = "store_true", default = False, help = "List selected files in the order they will appear in CAS.")
 
-	parser.add_argument("-c", "--colors_update", nargs=3, metavar =("COLORS_FILE", "COLOR_STYLE", "COLOR_ORDER"), help = "Given an xml file with color definitions, a color style, and color ordering (defined in that file), change the selected files to use the given style and ordering. Colors are matched by name; unmatched colors will not be updated.")
-	parser.add_argument('-n', "--namesync", nargs=3, metavar = ("CREATOR_SETNAME", "PRODUCT_ID", "MESHNAME"), help = "For each given file with the prefix CREATOR_SETNAME, edit internal resources and fields to be based on the name of the file (CREATOR_SETNAME_COLOR.package) and the given product id and meshname.")
+	#parser.add_argument('-n', "--namesync", nargs=3, metavar = ("CREATOR_SETNAME", "PRODUCT_ID", "MESHNAME"), help = "For each given file with the prefix CREATOR_SETNAME, edit internal resources and fields to be based on the name of the file (CREATOR_SETNAME_COLOR.package) and the given product id and meshname.")
 
-	parser.add_argument("-r", "--recursive", action = "store_true", default = False, help = "Recurse into any folders found in the list of selected files.")
-
-	parser.add_argument("filenames", help = "File(s) to process", nargs = "*")
+	#parser.add_argument("-c", "--colors_update", nargs=3, metavar =("COLORS_FILE", "COLOR_STYLE", "COLOR_ORDER"), help = "Given an xml file with color definitions, a color style, and color ordering (defined in that file), change the selected files to use the given style and ordering. Colors are matched by name; unmatched colors will not be updated.")
 
 	return parser.parse_args(args);
 
-def load_items(globbables, recursive):
+def load_items(globbables):
 	filenames = []
 	for path in globbables:
-		filenames += glob.glob(path, recursive=recursive)
+		filenames += glob.glob(path)
 
 	items = {}
 	for file in filenames:

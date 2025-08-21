@@ -63,7 +63,7 @@ def updateBodyShopItem(item, color_map):
 c_lib.namesyncProcess.restype = ctypes.c_bool
 c_lib.namesyncProcess.argtypes = [ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_char_p, ctypes.c_uint, ctypes.c_int]
 
-def namesync(filename, namesync_indices, product, meshname):
+def namesync(filename, namesync_indices, product_id, meshname):
 	basename = os.path.basename(filename)
 	nameparts = basename.split("_") # earlier validated to have exactly 3 parts
 	creator = nameparts[0]
@@ -71,8 +71,6 @@ def namesync(filename, namesync_indices, product, meshname):
 
 	# Remove the extension from the name of the color
 	color = os.path.splitext(nameparts[2])[0]
-
-	product_id = int(product, 16)
 	
 	sortindex = 0
 	if color in namesync_indices:
