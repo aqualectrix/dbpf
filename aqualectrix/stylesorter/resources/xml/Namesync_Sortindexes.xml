@@ -27,6 +27,16 @@
 					<color name="WhiteHearts"/>
 					<color name="WhiteRainbowShapes"/>
 				</synonyms>
+				
+				<!-- Greys -->
+				<synonyms name="Grey" code="0x1010">
+					<color name="GreySweats"/>
+				</synonyms>
+				
+				<!-- Grey Shades -->
+				<synonyms name="Grey Shade" code="0x1070">
+					<color name="GreyStripe"/>
+				</synonyms>
 
 				<!-- Blacks -->
 				<synonyms name="Black" code="0x1510">
@@ -36,17 +46,27 @@
 					<color name="BlackLaces"/>
 					<color name="BlackPlaid"/>
 					<color name="BlackRoses"/>
+					<color name="BlackSweats"/>
 					<color name="BlackZip"/>
+				</synonyms>
+				
+				<!-- Brown Tones -->
+				<synonyms name="Brown Tone" code="0x2050">
+					<color name="BrownStripe"/>
 				</synonyms>
 				
 				<!-- Reds -->
 				<synonyms name="Red" code="0x3010">
 					<color name="RedBlack"/>
+					<color name="RedCherrySplatter"/>
+					<color name="RedNautilus"/>
 				</synonyms>
 				
 				<!-- Red Pastels (Pinks) -->
 				<synonyms name="Red Tint" code="0x3030">
+					<color name="Pink"/>
 					<color name="PinkFlowers"/>
+					<color name="PinkSplotches"/>
 				</synonyms>
 				
 				<!-- Red Shades (Wines) -->
@@ -55,26 +75,73 @@
 					<color name="WineRoses"/>
 				</synonymns>
 				
+				<!-- RedOrange Tints -->
+				<synonyms name="RedOrange Tint" code="0x4030">
+					<color name="GreenToRed"/>
+				</synonyms>
+				
+				<!-- Oranges -->
+				<synonyms name="Orange" code="0x5010">
+					<color name="OrangeTropical"/>
+				</synonyms>
+				
 				<!-- Orange Shades -->
 				<synonyms name="Orange Shade" code="0x5070">
 					<color name="OrangeStockings"/>
 				</synonyms>
 				
+				<!-- YellowOranges -->
+				<synonyms name="YellowOrange" code="0x6010">
+					<color name="YellowOrangeSplatter"/>
+				</synonyms>
+				
 				<!-- Yellows -->
 				<synonyms name="Yellow" code="0x7010">
 					<color name="GoldBlue"/>
+					<color name="YellowTropical"/>
 				</synonyms>
 				
 				<!-- YellowGreens (Limes) -->
 				<synonyms name ="YellowGreen" code="0x8010">
-					<color name="LimeSkulls"/>
+					<color name="Lime"/>
 					<color name="LimeGold"/>
 					<color name="LimePlaid"/>
+					<color name="LimeSkulls"/>
+				</synonyms>
+				
+				<!-- YellowGreen Tones (Olives) -->
+				<synonyms name="YellowGreen Tone" code="0x8050">
+					<color name="GreenSweats"/>
+				</synonyms>
+				
+				<!-- Greens -->
+				<synonyms name="Green" code="0x9010">
+					<color name="GreenLimeSplatter"/>
+					<color name="Jade"/>
+					<color name="JadeGreenTropical"/>
+				</synonyms>
+				
+				<!-- Green Tints -->
+				<synonyms name="Green Tint" code="0x9030">
+					<color name="BlueToGreen"/>
+					<color name="Mint"/>
 				</synonyms>
 				
 				<!-- BlueGreens (Turquoises, Teals) -->
 				<synonyms name="BlueGreen" code="0xa010">
+					<color name="Turquoise"/>
 					<color name="TurquoiseStripes"/>
+					<color name="TurquoiseTropical"/>
+				</synonyms>
+				
+				<!-- BlueGreen Tints -->
+				<synonyms name="BlueGreen Tint" code="0xa030">
+					<color name="Aqua"/>
+				</synonyms>
+				
+				<!-- BlueGreen Shades -->
+				<synonyms name="BlueGreen Shade" code="0xa070">
+					<color name="DarkTealClassic"/>
 				</synonyms>
 				
 				<!-- BlueGreen Neons -->
@@ -91,17 +158,27 @@
 				
 				<!-- Blue Tints -->
 				<synonyms name="Blue Tint" code="0xb030">
+					<color name="BlueStripe"/>
+					<color name="PinkToBlue"/>
 					<color name="SkyBlue"/>
+					<color name="SkyBlueAquaSplatter"/>
 				</synonyms>
 				
 				<!-- Blue Tones -->
 				<synonyms name="Blue Tone" code="0xb050">
 					<color name="SlateBlue"/>
+					<color name="SlateBlueClassic"/>
 				</synonyms>
 				
 				<!-- BlueViolets -->
 				<synonyms name="BlueViolet" code="0xc010">
 					<color name="BlueLime"/>
+					<color name="Indigo"/>
+				</synonyms>
+				
+				<!-- BlueViolet Shades -->
+				<synonyms name="BlueViolet Shade" code="0xc070">
+					<color name="DeepIndigoClassic"/>
 				</synonyms>
 				
 				<!-- Violets -->
@@ -114,8 +191,20 @@
 					<color name="DarkPurpleRoses"/>
 				</synonyms>
 				
+				<!-- RedViolet Tints -->
+				<synonynms name="RedViolet Tint" code="0xe030">
+					<color name="RedVioletSplotches"/>
+					<color name="YellowToPurple"/>
+				</synonynms>
+				
+				<!-- RedViolet Shades -->
+				<synonyms name="RedViolet Shade" code="0xe070">
+					<color name="DarkPlumClassic"/>
+				</synonyms>
+				
 				<!-- RedViolet Neons (Magentas) -->
 				<synonyms name="RedViolet Neon" code="0xe090">
+					<color name="Magenta"/>
 					<color name="PlumBlue"/>
 				</synonyms>
 			</order>
