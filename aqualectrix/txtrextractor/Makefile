@@ -13,10 +13,7 @@ libTxtrExtractProcess.so: shared_txtrExtractProcess.o
 shared_txtrExtractProcess.o: txtrExtractProcess.cpp \
 	../../CatOfEvilGenius/library/DBPF.h \
 	../../CatOfEvilGenius/library/DBPF_types.h \
-	../../CatOfEvilGenius/library/DBPF_BINX.h \
-	../../CatOfEvilGenius/library/DBPF_CPF.h \
-	../../CatOfEvilGenius/library/DBPF_GZPS.h \
-	../../CatOfEvilGenius/library/DBPF_STR.h
+	../../CatOfEvilGenius/library/DBPF_TXTR.h
 	g++ -c -fPIC -o shared_txtrExtractProcess.o txtrExtractProcess.cpp
 
 .PHONY: clean

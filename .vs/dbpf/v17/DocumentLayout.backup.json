@@ -3,76 +3,16 @@
   "WorkspaceRootPath": "L:\\Redirects\\Documents\\GitHub\\dbpf\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\resources\\xml\\Namesync_Sortindexes.xml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\resources\\xml\\Namesync_Sortindexes.xml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\resources\\xml\\Namesync_Sortindexes.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\resources\\xml\\Namesync_Sortindexes.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\stylesorter.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\stylesorter.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\stylesorter.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\stylesorter.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bodyShopProcessWrapper.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\bodyShopProcessWrapper.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bodyShopProcess.cpp||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\bodyShopProcess.cpp||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\stylesorter.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\stylesorter.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\config.ini||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\config.ini||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\resources\\xml\\StylishSeasonalSortindexes.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\resources\\xml\\StylishSeasonalSortindexes.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_resource.h||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CatOfEvilGenius\\library\\DBPF_resource.h||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_TXMT.h||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CatOfEvilGenius\\library\\DBPF_TXMT.h||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_TXMT.cpp||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CatOfEvilGenius\\library\\DBPF_TXMT.cpp||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_CPF.h||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CatOfEvilGenius\\library\\DBPF_CPF.h||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_STR.h||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CatOfEvilGenius\\library\\DBPF_STR.h||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_STR.cpp||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CatOfEvilGenius\\library\\DBPF_STR.cpp||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_types.h||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CatOfEvilGenius\\library\\DBPF_types.h||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\sorter\\sortProcess.cpp||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\sorter\\sortProcess.cpp||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\Makefile||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\Makefile||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bodyshopitem.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\bodyshopitem.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bsokproduct.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\stylesorter\\bsokproduct.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\texref\\fileHandler.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aqualectrix\\texref\\fileHandler.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -81,7 +21,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 335,
+          "DockedWidth": 252,
           "SelectedChildIndex": 4,
           "Children": [
             {
@@ -98,15 +38,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "stylesorter.py",
               "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\stylesorter.py",
               "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\stylesorter.py",
               "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\stylesorter.py",
               "RelativeToolTip": "aqualectrix\\stylesorter\\stylesorter.py",
-              "ViewState": "AgIAALAAAAAAAAAAAAAAALQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAAAP0AAAAAAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMuSURBVDhPrVTPTxNREP627e7SQm0F2mKLUEVICP5IMBqUhB6NJ4/GGGPwoIf\u002BCR7VxBBPhnAxAeVC4kEuJB6Qi0Y8oCGKpoKQUpEWAhX6c7vb3X1Ol5UauzEc/JLJm31v3pdv5u0M/isYY5zpGohEIs8GBgZu8Dxv7tQik8mwbDb7YGpq6lEqlcqa2/twmOs\u002BBgcHEQgEzK9azMzMsHg8fsdut7Pp6enHKysrafPIQA1hBRRkelUQAcLhMEi9jTLxdnZ23pZl2elwOIYWFxe3zTBrwmAwaHpVcFy1OoIg8P39/c1Efo3KJquq\u002BpBEFCpnNiPiL9CFGvtd14rSyclJDA8P22dnZ1tcLlevKIp\u002B45BgqXBpacn0qqDUQGniXN9F9J6/AIeNg1TIyaOjo9/NEAOWhN3d3aZXRV5W8Sq2jY2sBElSwFNuR9x2x5HWtkabrZrogRXKDUEsb\u002BSxmSlg7tsG1LICX4PAX\u002Blpbff7/Q1mmHUNK6/5t2WKKt4uphBbS0NXy2QasvkiV1RtTrfb7TKvWhNWoGkaNHD4ulXGxNwmPibSOH3Ui95wI5rqeahESq8Ln7dwavLpjXe69HlB1/U2y5RXV1eNdb3E48VCDuvpHF1WoJWJhEyjdHWNVNKvJHBbgDQPlOZ74Ls7ZKmwq6vLsCKrw\u002BZu3lCjl1UquA6P0wGPi4eX7EzYhdNB6j5NoiL/AJS1S5YKY7GYsa6tS5BlUkOptTU6EI1IcNp3aQboNAh0eIUdhJybgFrcI9V2Pf9U2B4KQKCIisLbEQFnWz6gx7eMk/4VnGyOobU\u002BDk79SQF5IqNG4YM7loSKohjWfljE8WYn3KIdvkM6OKYBukIEMq2kkj7BiIJRF9Wd0iCEnlimnEwmjVUkuxU5jgzdD3jooUpEppWosT1kTlJE/S127UA89gV1J76Nj48PWRJ2dHSY3h4qg0HUkwz5AmcQajRc6vtIGRHam9aev1y/9/r1xNuRkZFiDeHY2Nj\u002BIPgTN69fThwVQ2Eon4iQHiD3HqzhPNOcvek3b\u002B7HK2Rm6MFAY\u002BoQ08uPWCmRYvl5ncnJBO29JLsajUbDe1HAL6CnYE1YMsFsAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-08-07T15:39:04.62Z",
+              "WhenOpened": "2025-08-20T00:00:47.099Z",
               "EditorCaption": ""
             },
             {
@@ -117,223 +57,22 @@
               "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\resources\\xml\\Namesync_Sortindexes.xml",
               "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\resources\\xml\\Namesync_Sortindexes.xml",
               "RelativeToolTip": "aqualectrix\\stylesorter\\resources\\xml\\Namesync_Sortindexes.xml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-08-17T00:08:44.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "config.ini",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\config.ini",
-              "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\config.ini",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\config.ini",
-              "RelativeToolTip": "aqualectrix\\stylesorter\\config.ini",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002768|",
-              "WhenOpened": "2025-08-17T00:03:49.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DBPF_TXMT.cpp",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_TXMT.cpp",
-              "RelativeDocumentMoniker": "CatOfEvilGenius\\library\\DBPF_TXMT.cpp",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_TXMT.cpp",
-              "RelativeToolTip": "CatOfEvilGenius\\library\\DBPF_TXMT.cpp",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-16T21:25:32.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DBPF_CPF.h",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_CPF.h",
-              "RelativeDocumentMoniker": "CatOfEvilGenius\\library\\DBPF_CPF.h",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_CPF.h",
-              "RelativeToolTip": "CatOfEvilGenius\\library\\DBPF_CPF.h",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAABYAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-16T19:12:52.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DBPF_resource.h",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_resource.h",
-              "RelativeDocumentMoniker": "CatOfEvilGenius\\library\\DBPF_resource.h",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_resource.h",
-              "RelativeToolTip": "CatOfEvilGenius\\library\\DBPF_resource.h",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-16T18:10:17.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "bodyshopitem.py",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bodyshopitem.py",
-              "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\bodyshopitem.py",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bodyshopitem.py",
-              "RelativeToolTip": "aqualectrix\\stylesorter\\bodyshopitem.py",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAADYAAAAXAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMuSURBVDhPrVTPTxNREP627e7SQm0F2mKLUEVICP5IMBqUhB6NJ4/GGGPwoIf\u002BCR7VxBBPhnAxAeVC4kEuJB6Qi0Y8oCGKpoKQUpEWAhX6c7vb3X1Ol5UauzEc/JLJm31v3pdv5u0M/isYY5zpGohEIs8GBgZu8Dxv7tQik8mwbDb7YGpq6lEqlcqa2/twmOs\u002BBgcHEQgEzK9azMzMsHg8fsdut7Pp6enHKysrafPIQA1hBRRkelUQAcLhMEi9jTLxdnZ23pZl2elwOIYWFxe3zTBrwmAwaHpVcFy1OoIg8P39/c1Efo3KJquq\u002BpBEFCpnNiPiL9CFGvtd14rSyclJDA8P22dnZ1tcLlevKIp\u002B45BgqXBpacn0qqDUQGniXN9F9J6/AIeNg1TIyaOjo9/NEAOWhN3d3aZXRV5W8Sq2jY2sBElSwFNuR9x2x5HWtkabrZrogRXKDUEsb\u002BSxmSlg7tsG1LICX4PAX\u002Blpbff7/Q1mmHUNK6/5t2WKKt4uphBbS0NXy2QasvkiV1RtTrfb7TKvWhNWoGkaNHD4ulXGxNwmPibSOH3Ui95wI5rqeahESq8Ln7dwavLpjXe69HlB1/U2y5RXV1eNdb3E48VCDuvpHF1WoJWJhEyjdHWNVNKvJHBbgDQPlOZ74Ls7ZKmwq6vLsCKrw\u002BZu3lCjl1UquA6P0wGPi4eX7EzYhdNB6j5NoiL/AJS1S5YKY7GYsa6tS5BlUkOptTU6EI1IcNp3aQboNAh0eIUdhJybgFrcI9V2Pf9U2B4KQKCIisLbEQFnWz6gx7eMk/4VnGyOobU\u002BDk79SQF5IqNG4YM7loSKohjWfljE8WYn3KIdvkM6OKYBukIEMq2kkj7BiIJRF9Wd0iCEnlimnEwmjVUkuxU5jgzdD3jooUpEppWosT1kTlJE/S127UA89gV1J76Nj48PWRJ2dHSY3h4qg0HUkwz5AmcQajRc6vtIGRHam9aev1y/9/r1xNuRkZFiDeHY2Nj\u002BIPgTN69fThwVQ2Eon4iQHiD3HqzhPNOcvek3b\u002B7HK2Rm6MFAY\u002BoQ08uPWCmRYvl5ncnJBO29JLsajUbDe1HAL6CnYE1YMsFsAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-08-07T16:26:14.329Z",
+              "WhenOpened": "2025-08-19T23:39:27.428Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "bodyShopProcessWrapper.py",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bodyShopProcessWrapper.py",
-              "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\bodyShopProcessWrapper.py",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bodyShopProcessWrapper.py",
-              "RelativeToolTip": "aqualectrix\\stylesorter\\bodyShopProcessWrapper.py",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAAAE4AAAAkAAAAAAAAAA==",
+              "Title": "fileHandler.py",
+              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\texref\\fileHandler.py",
+              "RelativeDocumentMoniker": "aqualectrix\\texref\\fileHandler.py",
+              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\texref\\fileHandler.py",
+              "RelativeToolTip": "aqualectrix\\texref\\fileHandler.py",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACgAAAAlAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMuSURBVDhPrVTPTxNREP627e7SQm0F2mKLUEVICP5IMBqUhB6NJ4/GGGPwoIf\u002BCR7VxBBPhnAxAeVC4kEuJB6Qi0Y8oCGKpoKQUpEWAhX6c7vb3X1Ol5UauzEc/JLJm31v3pdv5u0M/isYY5zpGohEIs8GBgZu8Dxv7tQik8mwbDb7YGpq6lEqlcqa2/twmOs\u002BBgcHEQgEzK9azMzMsHg8fsdut7Pp6enHKysrafPIQA1hBRRkelUQAcLhMEi9jTLxdnZ23pZl2elwOIYWFxe3zTBrwmAwaHpVcFy1OoIg8P39/c1Efo3KJquq\u002BpBEFCpnNiPiL9CFGvtd14rSyclJDA8P22dnZ1tcLlevKIp\u002B45BgqXBpacn0qqDUQGniXN9F9J6/AIeNg1TIyaOjo9/NEAOWhN3d3aZXRV5W8Sq2jY2sBElSwFNuR9x2x5HWtkabrZrogRXKDUEsb\u002BSxmSlg7tsG1LICX4PAX\u002Blpbff7/Q1mmHUNK6/5t2WKKt4uphBbS0NXy2QasvkiV1RtTrfb7TKvWhNWoGkaNHD4ulXGxNwmPibSOH3Ui95wI5rqeahESq8Ln7dwavLpjXe69HlB1/U2y5RXV1eNdb3E48VCDuvpHF1WoJWJhEyjdHWNVNKvJHBbgDQPlOZ74Ls7ZKmwq6vLsCKrw\u002BZu3lCjl1UquA6P0wGPi4eX7EzYhdNB6j5NoiL/AJS1S5YKY7GYsa6tS5BlUkOptTU6EI1IcNp3aQboNAh0eIUdhJybgFrcI9V2Pf9U2B4KQKCIisLbEQFnWz6gx7eMk/4VnGyOobU\u002BDk79SQF5IqNG4YM7loSKohjWfljE8WYn3KIdvkM6OKYBukIEMq2kkj7BiIJRF9Wd0iCEnlimnEwmjVUkuxU5jgzdD3jooUpEppWosT1kTlJE/S127UA89gV1J76Nj48PWRJ2dHSY3h4qg0HUkwz5AmcQajRc6vtIGRHam9aev1y/9/r1xNuRkZFiDeHY2Nj\u002BIPgTN69fThwVQ2Eon4iQHiD3HqzhPNOcvek3b\u002B7HK2Rm6MFAY\u002BoQ08uPWCmRYvl5ncnJBO29JLsajUbDe1HAL6CnYE1YMsFsAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-08-07T23:03:12.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "sortProcess.cpp",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\sorter\\sortProcess.cpp",
-              "RelativeDocumentMoniker": "aqualectrix\\sorter\\sortProcess.cpp",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\sorter\\sortProcess.cpp",
-              "RelativeToolTip": "aqualectrix\\sorter\\sortProcess.cpp",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-10T19:05:38.721Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DBPF_STR.h",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_STR.h",
-              "RelativeDocumentMoniker": "CatOfEvilGenius\\library\\DBPF_STR.h",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_STR.h",
-              "RelativeToolTip": "CatOfEvilGenius\\library\\DBPF_STR.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-16T15:58:32.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DBPF_STR.cpp",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_STR.cpp",
-              "RelativeDocumentMoniker": "CatOfEvilGenius\\library\\DBPF_STR.cpp",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_STR.cpp",
-              "RelativeToolTip": "CatOfEvilGenius\\library\\DBPF_STR.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-16T18:03:45.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DBPF_types.h",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_types.h",
-              "RelativeDocumentMoniker": "CatOfEvilGenius\\library\\DBPF_types.h",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_types.h",
-              "RelativeToolTip": "CatOfEvilGenius\\library\\DBPF_types.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-16T15:57:05.607Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DBPF_TXMT.h",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_TXMT.h",
-              "RelativeDocumentMoniker": "CatOfEvilGenius\\library\\DBPF_TXMT.h",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\CatOfEvilGenius\\library\\DBPF_TXMT.h",
-              "RelativeToolTip": "CatOfEvilGenius\\library\\DBPF_TXMT.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-16T21:25:14.497Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 65,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Makefile",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\Makefile",
-              "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\Makefile",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\Makefile",
-              "RelativeToolTip": "aqualectrix\\stylesorter\\Makefile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-07T22:16:43.441Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "bsokproduct.py",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bsokproduct.py",
-              "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\bsokproduct.py",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bsokproduct.py",
-              "RelativeToolTip": "aqualectrix\\stylesorter\\bsokproduct.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMuSURBVDhPrVTPTxNREP627e7SQm0F2mKLUEVICP5IMBqUhB6NJ4/GGGPwoIf\u002BCR7VxBBPhnAxAeVC4kEuJB6Qi0Y8oCGKpoKQUpEWAhX6c7vb3X1Ol5UauzEc/JLJm31v3pdv5u0M/isYY5zpGohEIs8GBgZu8Dxv7tQik8mwbDb7YGpq6lEqlcqa2/twmOs\u002BBgcHEQgEzK9azMzMsHg8fsdut7Pp6enHKysrafPIQA1hBRRkelUQAcLhMEi9jTLxdnZ23pZl2elwOIYWFxe3zTBrwmAwaHpVcFy1OoIg8P39/c1Efo3KJquq\u002BpBEFCpnNiPiL9CFGvtd14rSyclJDA8P22dnZ1tcLlevKIp\u002B45BgqXBpacn0qqDUQGniXN9F9J6/AIeNg1TIyaOjo9/NEAOWhN3d3aZXRV5W8Sq2jY2sBElSwFNuR9x2x5HWtkabrZrogRXKDUEsb\u002BSxmSlg7tsG1LICX4PAX\u002Blpbff7/Q1mmHUNK6/5t2WKKt4uphBbS0NXy2QasvkiV1RtTrfb7TKvWhNWoGkaNHD4ulXGxNwmPibSOH3Ui95wI5rqeahESq8Ln7dwavLpjXe69HlB1/U2y5RXV1eNdb3E48VCDuvpHF1WoJWJhEyjdHWNVNKvJHBbgDQPlOZ74Ls7ZKmwq6vLsCKrw\u002BZu3lCjl1UquA6P0wGPi4eX7EzYhdNB6j5NoiL/AJS1S5YKY7GYsa6tS5BlUkOptTU6EI1IcNp3aQboNAh0eIUdhJybgFrcI9V2Pf9U2B4KQKCIisLbEQFnWz6gx7eMk/4VnGyOobU\u002BDk79SQF5IqNG4YM7loSKohjWfljE8WYn3KIdvkM6OKYBukIEMq2kkj7BiIJRF9Wd0iCEnlimnEwmjVUkuxU5jgzdD3jooUpEppWosT1kTlJE/S127UA89gV1J76Nj48PWRJ2dHSY3h4qg0HUkwz5AmcQajRc6vtIGRHam9aev1y/9/r1xNuRkZFiDeHY2Nj\u002BIPgTN69fThwVQ2Eon4iQHiD3HqzhPNOcvek3b\u002B7HK2Rm6MFAY\u002BoQ08uPWCmRYvl5ncnJBO29JLsajUbDe1HAL6CnYE1YMsFsAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-08-09T16:37:54.597Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "bodyShopProcess.cpp",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bodyShopProcess.cpp",
-              "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\bodyShopProcess.cpp",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\bodyShopProcess.cpp",
-              "RelativeToolTip": "aqualectrix\\stylesorter\\bodyShopProcess.cpp",
-              "ViewState": "AgIAAFQBAAAAAAAAAAAAAFIBAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-07T19:12:54.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "stylesorter.py",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\stylesorter.py",
-              "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\stylesorter.py",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\stylesorter.py",
-              "RelativeToolTip": "aqualectrix\\stylesorter\\stylesorter.py",
-              "ViewState": "AgIAAPQAAAAAAAAAAAAAAP4AAAA4AAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMuSURBVDhPrVTPTxNREP627e7SQm0F2mKLUEVICP5IMBqUhB6NJ4/GGGPwoIf\u002BCR7VxBBPhnAxAeVC4kEuJB6Qi0Y8oCGKpoKQUpEWAhX6c7vb3X1Ol5UauzEc/JLJm31v3pdv5u0M/isYY5zpGohEIs8GBgZu8Dxv7tQik8mwbDb7YGpq6lEqlcqa2/twmOs\u002BBgcHEQgEzK9azMzMsHg8fsdut7Pp6enHKysrafPIQA1hBRRkelUQAcLhMEi9jTLxdnZ23pZl2elwOIYWFxe3zTBrwmAwaHpVcFy1OoIg8P39/c1Efo3KJquq\u002BpBEFCpnNiPiL9CFGvtd14rSyclJDA8P22dnZ1tcLlevKIp\u002B45BgqXBpacn0qqDUQGniXN9F9J6/AIeNg1TIyaOjo9/NEAOWhN3d3aZXRV5W8Sq2jY2sBElSwFNuR9x2x5HWtkabrZrogRXKDUEsb\u002BSxmSlg7tsG1LICX4PAX\u002Blpbff7/Q1mmHUNK6/5t2WKKt4uphBbS0NXy2QasvkiV1RtTrfb7TKvWhNWoGkaNHD4ulXGxNwmPibSOH3Ui95wI5rqeahESq8Ln7dwavLpjXe69HlB1/U2y5RXV1eNdb3E48VCDuvpHF1WoJWJhEyjdHWNVNKvJHBbgDQPlOZ74Ls7ZKmwq6vLsCKrw\u002BZu3lCjl1UquA6P0wGPi4eX7EzYhdNB6j5NoiL/AJS1S5YKY7GYsa6tS5BlUkOptTU6EI1IcNp3aQboNAh0eIUdhJybgFrcI9V2Pf9U2B4KQKCIisLbEQFnWz6gx7eMk/4VnGyOobU\u002BDk79SQF5IqNG4YM7loSKohjWfljE8WYn3KIdvkM6OKYBukIEMq2kkj7BiIJRF9Wd0iCEnlimnEwmjVUkuxU5jgzdD3jooUpEppWosT1kTlJE/S127UA89gV1J76Nj48PWRJ2dHSY3h4qg0HUkwz5AmcQajRc6vtIGRHam9aev1y/9/r1xNuRkZFiDeHY2Nj\u002BIPgTN69fThwVQ2Eon4iQHiD3HqzhPNOcvek3b\u002B7HK2Rm6MFAY\u002BoQ08uPWCmRYvl5ncnJBO29JLsajUbDe1HAL6CnYE1YMsFsAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-08-17T01:08:38.553Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StylishSeasonalSortindexes.xml",
-              "DocumentMoniker": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\resources\\xml\\StylishSeasonalSortindexes.xml",
-              "RelativeDocumentMoniker": "aqualectrix\\stylesorter\\resources\\xml\\StylishSeasonalSortindexes.xml",
-              "ToolTip": "L:\\Redirects\\Documents\\GitHub\\dbpf\\aqualectrix\\stylesorter\\resources\\xml\\StylishSeasonalSortindexes.xml",
-              "RelativeToolTip": "aqualectrix\\stylesorter\\resources\\xml\\StylishSeasonalSortindexes.xml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-08-17T00:07:49.382Z",
+              "WhenOpened": "2025-08-19T22:59:46.58Z",
               "EditorCaption": ""
             }
           ]
