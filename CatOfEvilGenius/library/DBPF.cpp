@@ -11,7 +11,6 @@
 #include <cstdio>
 #include <cstring>
 #include <string>
-#include <iostream>
 
 #include "DBPF.h"
 #include "DBPF_types.h"
@@ -792,9 +791,6 @@ bool DBPFtype::writeHeader( FILE * f, vector< DBPF_resourceType * > & resources 
 
 bool DBPFtype::writeResources( FILE * f, vector< DBPF_resourceType * > & resources )
 {
-  // resource loop
-  clog << "writing " << resources.size() << " non-DIR resources" << endl;
-
   DBPF_resourceType * pResource = NULL;
 
   unsigned int byteCount = 0;
