@@ -11,6 +11,7 @@
 #include <cstdio>
 #include <cstring>
 #include <string>
+#include <iostream>
 
 #include "DBPF.h"
 #include "DBPF_types.h"
@@ -792,6 +793,7 @@ bool DBPFtype::writeHeader( FILE * f, vector< DBPF_resourceType * > & resources 
 bool DBPFtype::writeResources( FILE * f, vector< DBPF_resourceType * > & resources )
 {
   // resource loop
+  clog << "writing " << resources.size() << " non-DIR resources" << endl;
 
   DBPF_resourceType * pResource = NULL;
 
@@ -918,7 +920,9 @@ bool DBPFtype::writeIndexTable( FILE * f, vector< DBPF_resourceType * > & resour
   // hack - last entry, for DIR
 
   // DIR TGI
-  foo = this->mDIR.mMyIndexEntry.muTypeID;
+  // If there was no DIR originally, mDIR.mMyIndexEntry.muTypeID will be 0.
+  // But in order to properly save this as a DIR / CLST, we need to set the type to DBPF_DIR.
+  foo = DBPF_DIR;
   fwrite( &foo, sizeof(unsigned int), 1, f );
   foo = this->mDIR.mMyIndexEntry.muGroupID;
   fwrite( &foo, sizeof(unsigned int), 1, f );
