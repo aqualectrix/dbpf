@@ -1,4 +1,5 @@
 import ctypes
+import shutil
 import os
 
 # Load shared library into ctypes
@@ -16,5 +17,13 @@ def extractFromFiles(filenames, savefile_prefix):
 	file_array = (ctypes.c_char_p * len(filenames))(*encoded_names)
 	savefile = savefile_prefix + "TXTRs.package"
 
-	return c_lib.txtrExtractProcess(file_array, len(filenames), savefile.encode("utf-8"))
+	# Create a copy of the empty .package in the same directory as the first file.
+	empty_package_path = os.path.normpath(
+		os.path.join(os.getcwd(), "resources", "empty.package"))
+	directory = os.path.dirname(filenames[0])
+	new_package_path = os.path.normpath(os.path.join(directory, savefile))
+
+	shutil.copyfile(empty_package_path, new_package_path)
+
+	return c_lib.txtrExtractProcess(file_array, len(filenames), new_package_path.encode("utf-8"))
 	
