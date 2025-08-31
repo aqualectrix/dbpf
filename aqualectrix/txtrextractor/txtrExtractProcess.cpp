@@ -46,7 +46,9 @@ void removeNullResources( vector< DBPF_resourceType * > & resources )
 extern "C" // for exporting to shared library for use in Python
 int txtrExtractProcess(const char** filenames, const int num_filenames, const char* savefile_name) {
     vector<DBPF_resourceType*> extractedResources;
+    extractedResources.clear();
 
+    // Extract TXTR resources and remove them from the original packages
     for(int f = 0; f < num_filenames; f++) {
         DBPFtype package;
         vector<DBPF_resourceType*> resources;
@@ -61,7 +63,7 @@ int txtrExtractProcess(const char** filenames, const int num_filenames, const ch
             return false;
         }
 
-        // Find, copy, and null out TXTRs
+        // Find and copy TXTRs
         int item_count = resources.size();
         DBPF_resourceType* pResource = NULL;
 
@@ -73,16 +75,38 @@ int txtrExtractProcess(const char** filenames, const int num_filenames, const ch
             }
 
             if (DBPF_TXTR == pResource->getType()) {
-                extractedResources.push_back(new DBPF_TXTRtype(*((DBPF_TXTRtype*)pResource)));
-
-                // We've copied it elsewhere; we don't need this resource anymore.
-                delete pResource;
-                pResource = NULL;
-                resources[i] = NULL;
+                extractedResources.push_back((DBPF_TXTRtype*)pResource);
             }
         }
+    }
 
-        removeNullResources(resources);
+    // Add TXTR resources to the provided file.
+    DBPFtype package;
+    vector<DBPF_resourceType*> resources;
+
+    // We don't need to init any resources -- we're not interested in the current contents of
+    // the (empty) file.
+    vector<unsigned int> typesToInit;
+
+    if (!readPackage(savefile_name, package, typesToInit, resources)) {
+        cerr << "Opening and reading from " << savefile_name << " failed. Extracting aborted." << endl;
+        return false;
+    }
+
+    if (!resources.empty()) {
+        cerr << "New file " << savefile_name << " already contains resources. Aborting instead of overwriting." << endl;
+        return false;
+    }
+
+    // Replace the contents of the file with the extracted resources
+    bool write_success = writeCompressedPackage(savefile_name, package, extractedResources);
+    if (!write_success) {
+        cerr << "Writing to file " << savefile_name << " failed. File may be corrupted... " <<
+                "or you may have the file open somewhere else (SimPE, maybe?). " <<
+                "If so, close the file elsewhere and try again." << endl;
+    }
+    else {
+        clog << "File written!" << endl;
     }
 
     return extractedResources.size();
