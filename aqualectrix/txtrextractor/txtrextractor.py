@@ -7,6 +7,10 @@ from gooey import GooeyParser
 def main(args):
 	args = parse_args(args)
 
+	if len(args.filenames) <= 0:
+		print("No files to process.")
+		return
+
 	prefix = get_prefix(args.filenames)
 	if not prefix:
 		prefix = "Extracted_"
@@ -25,7 +29,13 @@ def parse_args(args):
 
 def get_prefix(filenames):
 	basenames = [os.path.basename(file) for file in filenames]
-	return os.path.commonprefix(basenames)
+
+	if (len(basenames) > 1):
+		return os.path.commonprefix(basenames)
+
+	# If it's just a single file, strip .package from the name and use that as the
+	# savefile prefix.
+	return os.path.splitext(basenames[0])[0]
 
 if __name__ == '__main__':
 	import sys
